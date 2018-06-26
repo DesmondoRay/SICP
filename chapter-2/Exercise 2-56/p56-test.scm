@@ -1,0 +1,10 @@
+(load "2-3-2-deriv.scm")
+
+(display (deriv '(** x 0) 'x))
+(newline)
+(display (deriv '(** x 1) 'x))
+(newline)
+(display (deriv '(** x 2) 'x))
+(newline)
+(display (deriv '(** x 3) 'x))
+(newline)

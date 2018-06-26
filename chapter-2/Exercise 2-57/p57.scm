@@ -1,0 +1,11 @@
+(define (augend s)
+  (let ((aug (cddr s)))
+	(if (null? (cdr aug))
+		(car aug)
+		(append (list '+) aug))))
+
+(define (multiplicand p)
+  (let ((mul (cddr p)))
+	(if (null? (cdr mul))
+		(car mul)
+		(append (list '*) mul))))
