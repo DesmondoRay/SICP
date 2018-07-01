@@ -1,11 +1,11 @@
 ;;; install-complex-package.scm
 
 (define (install-complex-package)
-  ;;imported procedures from rectangular and polor packages
+  ;;imported procedures from rectangular and polar packages
   (define (make-from-real-imag x y)
 	  ((get 'make-from-real-imag 'rectangular) x y))
   (define (make-from-mag-ang r a)
-	  ((get 'make-from-mag-ang 'polor) r a))
+	  ((get 'make-from-mag-ang 'polar) r a))
   
   ;;internal procedures
   (define (add-complex z1 z2)
