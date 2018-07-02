@@ -31,4 +31,3 @@
 (display (order-first-coeff (coeff-list p)))
 (newline)
 (display (rest-coeffs (coeff-list p)))
-
