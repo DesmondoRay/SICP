@@ -1,8 +1,5 @@
 ;;; install-real-package.scm
 
-(load "put-get.scm")
-(load "tag-contents.scm")
-
 ;;; real安装包
 (define (install-real-package)
   (define (tag x)
@@ -10,11 +7,11 @@
   (put 'add '(real real)
 	   (lambda (x y) (tag (+ x y))))
   (put 'sub '(real real)
-	   (lambda (x y) (tag (+ x y))))
+	   (lambda (x y) (tag (- x y))))
   (put 'mul '(real real)
-	   (lambda (x y) (tag (+ x y))))
+	   (lambda (x y) (tag (* x y))))
   (put 'div '(real real)
-	   (lambda (x y) (tag (+ x y))))
+	   (lambda (x y) (tag (/ x y))))
   (put 'equ? '(real real)
 	   (lambda (x y) (= x y)))
   (put 'make 'real

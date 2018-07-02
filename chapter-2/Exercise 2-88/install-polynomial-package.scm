@@ -2,7 +2,7 @@
 
 (define (install-polynomial-package)
   ;; internal procedures
-  
+
   ;; representation of arithmetic
   (define (add-poly p1 p2)
     (if (same-variable? (variable p1) (variable p2))
@@ -54,6 +54,10 @@
 					  (mul (coeff t1) (coeff t2)))
 		   (mul-term-by-all-terms t1 (rest-terms L))))))
   
+  ;; exercise 2-88的多项式减法
+  (define (sub-poly p1 p2)
+	(add (make-polynomial (variable p1) (term-list p1))
+		 (neg (make-polynomial (variable p2) (term-list p2)))))
 
   ;; interface to rest of the system
   (define (tag p) (attach-tag 'polynomial p))
@@ -64,6 +68,9 @@
   (put 'make 'polynomial
 	   (lambda (var terms) (tag (make-poly var terms))))
   
+  ;; exercise 2-88的多项式减法
+  (put 'sub '(polynomial polynomial)
+	   (lambda (p1 p2) (tag (sub-poly p1 p2))))
   
   ;; =zero?
   (put '=zero? '(polynomial)

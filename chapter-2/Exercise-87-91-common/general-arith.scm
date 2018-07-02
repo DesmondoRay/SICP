@@ -7,6 +7,5 @@
 (define (equ? x y) (apply-generic 'equ? x y))
 (define (=zero? x) (apply-generic '=zero? x))
 (define (raise x) (apply-generic 'raise x))
-
-;;; 新增
 (define (drop x) (apply-generic 'drop x))
+(define (neg x) (apply-generic 'neg x))

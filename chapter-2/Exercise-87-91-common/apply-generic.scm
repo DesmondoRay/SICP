@@ -27,5 +27,6 @@
       ((eq? t 'rational) 2)
       ((eq? t 'real) 3)
       ((eq? t 'complex) 4)
+	  ((eq? t 'polynomial) 5)
       (else (error "No such type" t))))
   (- (type-val t1) (type-val t2)))
