@@ -1,4 +1,4 @@
-;;; 87.scm
+;;; 88.scm
 
 (load "../Exercise-87-91-common/apply-generic.scm")
 (load "../Exercise-87-91-common/general-arith.scm")
