@@ -9,14 +9,14 @@
   (put 'add '(scheme-number scheme-number)
 	   (lambda (x y) (tag (+ x y))))
   (put 'sub '(scheme-number scheme-number)
-	   (lambda (x y) (tag (+ x y))))
+	   (lambda (x y) (tag (- x y))))
   (put 'mul '(scheme-number scheme-number)
-	   (lambda (x y) (tag (+ x y))))
+	   (lambda (x y) (tag (* x y))))
   (put 'div '(scheme-number scheme-number)
-	   (lambda (x y) (tag (+ x y))))
+	   (lambda (x y) (tag (/ x y))))
   (put 'equ? '(scheme-number scheme-number)
 	   (lambda (x y) (= x y)))
-  (put 'make 'scheme-numbre
+  (put 'make 'scheme-number
 	   (lambda (x) (tag x)))
   'done)
 

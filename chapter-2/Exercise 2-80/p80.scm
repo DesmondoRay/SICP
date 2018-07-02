@@ -19,7 +19,6 @@
 (install-rational-package)
 
 ;;; 新增的部分: 添加并安装新增的package
-;;; 可将下面三个package合并为一个文件
 (load "install-scheme-number-zero-package.scm")
 (load "install-complex-zero-package.scm")
 (load "install-rational-zero-package.scm")
