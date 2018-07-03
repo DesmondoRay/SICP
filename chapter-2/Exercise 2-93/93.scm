@@ -20,7 +20,7 @@
 (load "../Exercise-93-97-common/install-neg-package.scm")
 (load "../Exercise-93-97-common/install-poly-sparse-package.scm")
 (load "../Exercise-93-97-common/install-poly-dense-package.scm")
-(load "../Exercise-93-97-common/install-polynomial-package.scm")
+(load "install-polynomial-package.scm")
 (install-scheme-number-package)
 (install-complex-package)
 (install-polar-package)
