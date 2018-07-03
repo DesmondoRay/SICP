@@ -27,9 +27,6 @@
 
 ;; 新增的polynomial-selector.scm
 (load "polynomial-selector.scm")
-;; 新增的polynomial package
-(load "install-polynomial-package.scm")
-(install-polynomial-package)
 ;; 新增求负操作neg package
 (load "install-neg-package.scm")
 (install-neg-package)
@@ -39,6 +36,9 @@
 ;; 新增的install-poly-dense-package
 (load "install-poly-dense-package.scm")
 (install-poly-dense-package)
+;; 新增的polynomial package
+(load "install-polynomial-package.scm")
+(install-polynomial-package)
 
 
 ;;; 测试
