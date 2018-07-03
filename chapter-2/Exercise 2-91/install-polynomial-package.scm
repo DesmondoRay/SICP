@@ -87,18 +87,22 @@
 				  (list (adjoin-term (make-term new-o new-c)
 								     (car rest-of-result))
 					    (cadr rest-of-result))))))))
-  ;; exercise 2-91
-  (define (div-poly p1 p2)
-	(make-poly-sparse (variable p1)
-					  (div-terms (term-list p1)
-								 (term-list p2))))
-  
-  ; ;; exercise 2-91 测试div-terms
+  ;; exercise 2-91 测试div-terms
   ;(define l1 (list (make-term 5 1) (make-term 0 -1)))
   ;(define l2 (list (make-term 2 1) (make-term 0 -1)))
   ;(display (div-terms l1 l2))
   
-  
+  ;; exercise 2-91
+  (define (div-poly p1 p2)
+	(if (same-variable? (variable p1) (variable p2))
+		(let ((result (div-terms (term-list p1) (term-list p2))))
+		  (list (make-poly-sparse (variable p1)
+								  (car result))
+				(make-poly-sparse (variable p1)
+								  (cadr result))))
+		(error "Polys not in same var -- DIV-POLY"
+			   (list p1 p2))))
+
   ;; interface to rest of the system
   (define (tag p) (attach-tag 'polynomial p))
   (put 'add '(polynomial polynomial)
@@ -117,7 +121,9 @@
   
   ;; exercise 2-91
   (put 'div '(polynomial polynomial)
-	   (lambda (p1 p2) (tag (div-poly p1 p2))))
+	   (lambda (p1 p2) 
+		 (list (tag (car (div-poly p1 p2)))
+			   (tag (cadr (div-poly p1 p2))))))
   
   ;; =zero?
   (put '=zero? '(polynomial)
