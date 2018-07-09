@@ -27,15 +27,12 @@
 
 (set-value! a 10 'user)
 (set-value! b 6 'user)
-(set-value! c 1 'user)
 
 ; 输出:
 ;	Probe: a = 10
 ;	Probe: b = 6
 ;	Probe: c = 8
-;	;Contradiction (8 1)
 
-; 终端输入:
 (forget-value! a 'user)
 ; 输出:
 ;	Probe: a = ?
@@ -45,4 +42,8 @@
 ; 输出:
 ;	Probe: c = 5
 ;	Probe: a = 4
+
+(set-value! a 5 'user)
+;Contradiction (4 5)
+
 
