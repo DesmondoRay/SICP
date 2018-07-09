@@ -1,4 +1,4 @@
-;;; c-f-converter.scm
+;;; celsius-fahrenheit-converter.scm
 ;;; page 199
 
 (load "3.3.5.scm")
