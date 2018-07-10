@@ -48,3 +48,8 @@
 (display (add rf rf))
 (newline)
 
+;; 结果:
+;	(rational (polynomial sparse x (3 1) (0 1)) polynomial sparse x (2 1) (0 1))
+;	(rational (polynomial sparse x (5 2) (3 2) (2 2) (0 2)) 
+;			   polynomial sparse x (4 1) (2 2) (0 1))
+
