@@ -1,5 +1,5 @@
 ;;; 47.scm
-;;; 注: 此测试需要在racket中进行
+;;; 注: 此测试需要在DrRacket中进行
 
 #lang racket
 (require sicp)
