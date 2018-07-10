@@ -26,7 +26,7 @@
 			 false)))
 
 ;; parallel-execute-racket.scm
-;; 在racket中才能正常工作
+;; 这个parallel-execute过程在DrRacket中才能正常工作
 (define (parallel-execute . procs)
   (map thread-wait
        (map (lambda (proc) (thread proc))
