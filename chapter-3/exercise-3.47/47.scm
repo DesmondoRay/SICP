@@ -25,6 +25,7 @@
 	  (begin (set-car! cell (+ 1 (car cell)))
 			 false)))
 
+;; parallel-execute-racket.scm
 ;; 在racket中才能正常工作
 (define (parallel-execute . procs)
   (map thread-wait
