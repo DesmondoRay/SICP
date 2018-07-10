@@ -53,7 +53,9 @@
 ; 测试结果，输出:
 ;   (rational (polynomial sparse x (3 -1) (2 -2) (1 -3) (0 -1)) 
 ;              polynomial sparse x (4 -1) (3 -1) (1 1) (0 1))
-; 输出结果为最简形式
+; 输出结果为最简形式; 不简化的结果为: 
+;	(rational (polynomial sparse x (4 1) (3 1) (2 1) (1 -2) (0 -1))
+;			   polynomial sparse x (5 1) (3 -1) (2 -1) (0 1))
 
 
 ;; 测试分子分母为整数的有理数
