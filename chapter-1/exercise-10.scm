@@ -10,9 +10,13 @@
 (newline)
 (display (A 1 10))
 (newline)
-(display (A 2 2))
+(display (A 2 4))
 (newline)
 (display (A 3 3))
+; 输出:
+;	1024
+;	65536
+;	65536
 
 ;; 给出下列f, g, h, k 的数学定义
 (define (f n) (A 0 n))  ; --> 2 * n
