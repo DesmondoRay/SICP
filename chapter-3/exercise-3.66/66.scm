@@ -19,14 +19,16 @@
 ;; test
 (define s (pairs integers integers))
 
-(define (before-1-100 s l)
+(define (before s l)
   (if (not (equal? (stream-car s) l))
 	  (cons-stream (stream-car s)
-				   (before-1-100 (stream-cdr s) l))
+				   (before (stream-cdr s) l))
 	  '()))
 
-(define before (before-1-100 s '(1 100)))
-(display (length (stream->list before)))
+(define before-1-100 (before s '(1 100)))
+(display (length (stream->list before-1-100)))
+;; 结果: 197
 (newline)
 (newline)
-(display (stream->list before))
+(display (stream->list before-1-100))
+
