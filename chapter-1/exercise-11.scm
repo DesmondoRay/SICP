@@ -1,5 +1,6 @@
 ;;; exercise 1.11
 
+;; 递归
 (define (f n)
   (if (< n 3)
       n
@@ -24,6 +25,7 @@
 ;	142
 
 
+;; 迭代
 (define (ff n)
   (f-iter 0 1 2 0 n))
 
