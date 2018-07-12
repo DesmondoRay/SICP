@@ -14,9 +14,10 @@
 ;; test
 (load "common/print.scm") ; print过程接受多个参数并打印所有参数的结果
 
-(print (fast-mult 3 5)
-	   (fast-mult 5 10)
-	   (fast-mult 7 4038204830284023854023850242352))
+(print 
+ (fast-mult 3 5)
+ (fast-mult 5 10)
+ (fast-mult 7 4038204830284023854023850242352))
 ; 结果:
 ;	15
 ;	50

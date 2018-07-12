@@ -20,9 +20,10 @@
 ;; test
 (load "common/print.scm") ; print过程接受多个参数并打印所有参数的结果
 
-(print (fib 5)
-	   (fib 7)
-	   (fib 12))
+(print 
+ (fib 5)
+ (fib 7)
+ (fib 12))
 ; 结果:
 ;	5
 ;	13
