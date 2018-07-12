@@ -12,20 +12,6 @@
 							(partial-sums S))))
 
 ;; test
-(load "../common/show-partial.scm") 
-;(show-partial stream n)过程打印stream的前n个元素
 
-(show-partial (partial-sums integers) 10)
-#| 结果:
-1
-3
-6
-10
-15
-21
-28
-36
-45
-55
-66
-|#
+(stream-head (partial-sums integers) 10)
+; 结果: (1 3 6 10 15 21 28 36 45 55)
