@@ -14,10 +14,10 @@
 ; 使用remainder次数： r1 = 1, r2 = 2, r3 = 3, r4 = 5;
 ; 代换：
 (gcd 206 40)
-(gcd 40 r1) ;判断(= r1 0)，计算次数: 1
-(gcd r1 r2) ;判断(= r2 0)，计算次数: 2
-(gcd r2 r3) ;判断(= r3 0)，计算次数: 3
-(gcd r3 r4) ;判断(= r4 0)，计算次数: 5，计算得 r4 = 0
+(gcd 40 r1) ;判 断(= r1 0)，计算次数: 1
+(gcd r1 r2) ;判 断(= r2 0)，计算次数: 2
+(gcd r2 r3) ;判 断(= r3 0)，计算次数: 3
+(gcd r3 r4) ;判 断(= r4 0)，计算次数: 5，计算得 r4 = 0
 r3          ;计算r3，计算次数: 3
 ```
 总次数: 14
@@ -25,13 +25,13 @@ r3          ;计算r3，计算次数: 3
 ### 应用序
 ```scheme
 (gcd 206 40)
-(gcd 40 (remainder 206 40)) 1
+(gcd 40 (remainder 206 40))
 (gcd 40 6)
-(gcd 6 (remainder 40 6)) 2
+(gcd 6 (remainder 40 6))
 (gcd 6 4)
-(gcd 4 (remainder 6 4)) 3
+(gcd 4 (remainder 6 4))
 (gcd 4 2)
-(gcd 4 (remainder 4 2)) 4
+(gcd 4 (remainder 4 2))
 (gcd 4 0)
 4
 ```
