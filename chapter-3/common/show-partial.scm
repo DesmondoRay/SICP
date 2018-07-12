@@ -8,5 +8,5 @@
   (define (display-line x)
 	(newline)
 	(display x))
-  (define show-n (stream-ref (stream-map show stream) n))
+  (define show-n (stream-ref (stream-map show stream) (- n 1)))
   show-n)
