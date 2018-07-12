@@ -7,10 +7,22 @@
          (* 2 (f (- n 2)))
          (* 3 (f (- n 3))))))
 
-(f 3)
-(f 4)
-(f 5)
-(f 7)
+;; test 1
+(newline)
+(display (f 3))
+(newline)
+(display (f 4))
+(newline)
+(display (f 5))
+(newline)
+(display (f 7))
+(newline)
+; 结果:
+;	4
+;	11
+;	25
+;	142
+
 
 (define (ff n)
   (f-iter 0 1 2 0 n))
@@ -24,7 +36,19 @@
               (+ i 1)
               n)))
 
-(ff 3)
-(ff 4)
-(ff 5)
-(ff 7)
+;; test 2
+(newline)
+(display (ff 3))
+(newline)
+(display (ff 4))
+(newline)
+(display (ff 5))
+(newline)
+(display (ff 7))
+(newline)
+; 结果:
+;	4
+;	11
+;	25
+;	142
+
