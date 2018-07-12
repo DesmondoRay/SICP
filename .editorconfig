@@ -1,7 +1,7 @@
 # top-most EditorConfig file
 root = true
 
-# all files
-[*]
+# .scm files 设置tab为2空格
+[*.scm]
 indent_style = tab
 indent_size = 2
