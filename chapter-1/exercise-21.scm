@@ -1,7 +1,5 @@
 ;;; exercise 1.21
 
-(define (square a) (* a a))
-
 (define (smallest-divisor n)
   (find-divisor n 2))
 
@@ -16,6 +14,13 @@
 (define (prime? n)
   (= n (smallest-divisor n)))
 
-(smallest-divisor 199)
-(smallest-divisor 1999)
-(smallest-divisor 19999)
+;; test
+(load "common/print.scm")
+(print
+ (smallest-divisor 199)
+ (smallest-divisor 1999)
+ (smallest-divisor 19999))
+; 结果:
+;	199
+;	1999
+;	7

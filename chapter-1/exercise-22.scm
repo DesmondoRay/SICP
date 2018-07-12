@@ -1,27 +1,6 @@
 ;;; exercise 1.22
 
-(define (square a) (* a a))
-
-(define (smallest-divisor n)
-  (find-divisor n 2))
-
-(define (find-divisor n test-divisor)
-  (cond ((> (square test-divisor) n) n)
-        ((divides? test-divisor n) test-divisor)
-        (else (find-divisor n (next test-divisor)))))
-
-(define (divides? test-divisor n)
-  (= (remainder n test-divisor) 0))
-
-(define (next test-divisor)
-  (if (= test-divisor 2)
-      3
-      (+ test-divisor 2)))
-
-(define (prime? n)
-  (= n (smallest-divisor n)))
-
-#! ************************* !#
+(load "common/prime?.scm")
 
 (define (timed-prime-test n)
   (start-prime-test n (runtime)))
@@ -47,25 +26,31 @@
 
 (define (report-time time)
   (display "time: ")
-  (display time)
+  (display (* 1000 time))  ; ms
   (newline))
 
+;; test
 (search-for-primes 10000000 3 (runtime))
 (newline)
 (search-for-primes 100000000 3 (runtime))
 (newline)
 (search-for-primes 1000000000 3 (runtime))
 (newline)
+#|
+输出：
+10000019
+10000079
+10000103
+time: 20.000000000000018
 
+100000007
+100000037
+100000039
+time: 60.
 
-
-
-
-
-
-
-
-
-
-
-  
+1000000007
+1000000009
+1000000021
+time: 180.
+|#
+;; 消耗时间的增长率约为3，接近于(sqrt 10)
