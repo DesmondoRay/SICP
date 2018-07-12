@@ -1,4 +1,5 @@
 ;;; print all results
+;;; 接收多个参数，依次打印
 
 (define (print . args)
   (cond ((null? args)
