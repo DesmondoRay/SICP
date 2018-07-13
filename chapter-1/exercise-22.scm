@@ -30,27 +30,27 @@
   (newline))
 
 ;; test
-(search-for-primes 10000000 3 (runtime))
-(newline)
-(search-for-primes 100000000 3 (runtime))
-(newline)
 (search-for-primes 1000000000 3 (runtime))
+(newline)
+(search-for-primes 10000000000 3 (runtime))
+(newline)
+(search-for-primes 100000000000 3 (runtime))
 (newline)
 #|
 输出：
-10000019
-10000079
-10000103
-time: 20.000000000000018
-
-100000007
-100000037
-100000039
-time: 60.
-
 1000000007
 1000000009
 1000000021
-time: 180.
+time: 149.99999999999946
+
+10000000019
+10000000033
+10000000061
+time: 500.
+
+100000000003
+100000000019
+100000000057
+time: 1410.0000000000002
 |#
 ;; 消耗时间的增长率约为3，接近于(sqrt 10)
