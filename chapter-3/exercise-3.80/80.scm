@@ -11,7 +11,7 @@
 	  (define dvc (scale-stream il (/ -1 C)))
 	  (define dil (add-streams (scale-stream vc (/ 1 L))
 							   (scale-stream il (- (/ R L)))))
-	  (stream-map cons vc il))
+	  (stream-map cons vc il)) ; vc 和 il 为 stream
 	vc-il)
 
 ;; test
