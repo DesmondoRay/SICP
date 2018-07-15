@@ -1,4 +1,7 @@
-;;; 4.1.2.scm
+;;; Representing Expressions
+;;; Page 255
+
+(load "../common/cond->if.scm")
 
 ;; 自求值表达式
 (define (self-evaluating? exp)
@@ -10,7 +13,7 @@
 (define (variable? exp) (symbol? exp))
 
 ;; 引号表达式
-(define (quoted? exp)
+(define (quoted? exp) 
   (tagged-list? exp 'quote))
 
 (define (text-of-quotation exp) (cadr exp))
@@ -22,7 +25,7 @@
 	  false))
 
 ;; 赋值
-(define (assignment? exp)
+(define (assignment? exp) 
   (tagged-list? exp 'set!))
 
 (define (assignment-variable exp) (cadr exp))
@@ -30,7 +33,7 @@
 (define (assignment-value exp) (caddr exp))
 
 ;; 定义
-(define (definition? exp)
+(define (definition? exp) 
   (tagged-list? exp 'define))
 
 (define (definition-variable exp)
@@ -45,7 +48,8 @@
 				   (cddr exp))))
 
 ;; lambda表达式
-(define (lambda? exp) (tagged-list? exp 'lambda))
+(define (lambda? exp) 
+  (tagged-list? exp 'lambda))
 
 (define (lambda-parameters exp) (cadr exp))
 
@@ -64,7 +68,7 @@
 (define (if-alternative exp)
   (if (not (null? (cdddr exp)))
 	  (cadddr exp)
-	  ('false)))
+	  'false))
 
 (define (make-if predicate consequent alternative)
   (list 'if predicate consequent alternative))
