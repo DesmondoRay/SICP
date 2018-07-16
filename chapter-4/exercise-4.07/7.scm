@@ -43,7 +43,10 @@
 (driver-loop)
 
 ;;; M-Eval input: 
-(let* ((x 3) (y (+ x 2)) (z (+ x y 5))) (* x z))
+(let* ((x 3) 
+	   (y (+ x 2)) 
+	   (z (+ x y 5))) 
+  (* x z))
 
 ;;; M-Eval value: 
 39
