@@ -33,7 +33,9 @@
 (driver-loop)
 
 ;;; M-Eval input: 
-(let ((a 3) (b 4)) (+ a b))
+(let ((a 3) 
+	  (b 4)) 
+  (+ a b))
 
 ;;; M-Eval value: 
 7
