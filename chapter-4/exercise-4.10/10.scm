@@ -45,7 +45,7 @@ output:
 ;; 为简化起见，将新操作作为基本过程
 (define (new-operator-objects)
   (map (lambda (proc) (list 'primitive (cadr proc)))
-	   new-operator))
+       new-operator))
 
 ;; 为简化起见，将新操作直接添加到the-global-environment
 (define (new-environment)
