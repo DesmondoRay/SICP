@@ -12,8 +12,8 @@
 
 (define (let->combination exp)
   (if (not (list? (let-name exp)))
-	  (let->combination-named exp)  ; “命名let”
-	  (let->combination-normal exp))) ; “普通let”
+      (let->combination-named exp)  ; “命名let”
+      (let->combination-normal exp))) ; “普通let”
 
 (define (make-application operator operands)
   (cons operator operands))
@@ -27,7 +27,7 @@
   (define (let-exps exp) (map cadr (cadr exp)))
   (define (let-body exp) (cddr exp))
   (make-application (make-lambda (let-vars exp) (let-body exp))
-					(let-exps exp)))
+                    (let-exps exp)))
 
 ; “命名let”
 (define (let->combination-named exp)
@@ -46,8 +46,8 @@
   |#
   (sequence->exp
    (list (make-definition (cons (let-name exp) (let-vars exp))
-						  (let-body exp))
-		 (make-application (let-name exp) (let-vals exp)))))
+                          (let-body exp))
+         (make-application (let-name exp) (let-vals exp)))))
 
 ;; 将eval-let加入元循环求值器
 (put 'op 'let eval-let)
