@@ -26,9 +26,11 @@
 		(else
 		 (error "Unknown expression type -- EVAL" exp))))
 
+
+;; (driver-loop)
+
 #|
 ;; test(交互模式下)
-(driver-loop)
 
 ;;; M-Eval input: 
 (list 1 'a "b")	; test: application? and self-evaluating?
