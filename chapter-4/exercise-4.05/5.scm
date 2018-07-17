@@ -19,31 +19,31 @@
 ;; 判断该clause是否为=>语法
 (define (cond-=>? actions)
   (and (pair? actions)
-	   (eq? '=> (car actions))))
+       (eq? '=> (car actions))))
 
 (define (expand-clauses clauses)
   (if (null? clauses)
-	  'false
-	  (let ((first (car clauses))
-			(rest (cdr clauses)))
-		(if (cond-else-clause? first)
-			(if (null? rest)
-				(sequence->exp (cond-actions first))
-				(error "ELSE clause isn't last -- COND->IF"
-					   clauses))
-			(let ((actions (cond-actions first))
-				  (predicate (cond-predicate first)))
-			  (if (cond-=>? actions)  ; 修改
-				  (make-if predicate
-						   ; 生成过程时，需要将过程和参数作为一个list
-						   (list (cadr actions) predicate) 
-						   (expand-clauses rest))
-				  (make-if predicate
-						   (sequence->exp actions)
-						   (expand-clauses rest))))))))
+      'false
+      (let ((first (car clauses))
+            (rest (cdr clauses)))
+        (if (cond-else-clause? first)
+            (if (null? rest)
+                (sequence->exp (cond-actions first))
+                (error "ELSE clause isn't last -- COND->IF"
+                       clauses))
+            (let ((actions (cond-actions first))
+                  (predicate (cond-predicate first)))
+              (if (cond-=>? actions)  ; 修改
+                  (make-if predicate
+                           ; 生成过程时，需要将过程和参数作为一个list
+                           (list (cadr actions) predicate) 
+                           (expand-clauses rest))
+                  (make-if predicate
+                           (sequence->exp actions)
+                           (expand-clauses rest))))))))
 
 (put 'op 'cond (lambda (exp env)
-				 (eval-in-4 (cond->if exp) env)))
+                 (eval-in-4 (cond->if exp) env)))
 
 
 #|
@@ -57,13 +57,16 @@
 ok
 
 ;;; M-Eval input: 
-(cond (a => car) (else 'false))  ; 测试新语法
+(cond (a => car) 
+      (else 'false))  ; 测试新语法
 
 ;;; M-Eval value: 
 1
 
 ;;; M-Eval input: 
-(cond ((= 2 (car a)) (car a)) (else (cdr a)))  ; 测试常规语法
+(cond ((= 2 (car a)) 
+       (car a)) 
+      (else (cdr a)))  ; 测试常规语法
 
 ;;; M-Eval value: 
 2
