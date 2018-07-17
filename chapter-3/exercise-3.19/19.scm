@@ -6,18 +6,18 @@
 (define (cycle? x) 
    (define (iter one-step two-step) 
      (cond ((or (not (pair? one-step))
-			    (not (pair? two-step)))
-			#f)
+                (not (pair? two-step)))
+            #f)
            ((eq? one-step two-step) #t)
            (else 
-			(iter (safe-cdr one-step) 
-				  (safe-cdr (safe-cdr two-step))))))
+            (iter (safe-cdr one-step) 
+                  (safe-cdr (safe-cdr two-step))))))
    (iter (safe-cdr x) (safe-cdr (safe-cdr x))))
 
 (define (safe-cdr l)
   (if (pair? l) 
-	  (cdr l) 
-	  '())) 
+      (cdr l) 
+      '())) 
 
 ;; test: x本身为环
 (define x '(a b c))
@@ -27,7 +27,7 @@
 (display (cycle? (append! x x)))
 (newline)
 ; 输出：
-;	#f
-;	#t
+;   #f
+;   #t
 
 ;; 注: 只考虑整个列表为环的情况，包含环的情况见exercise-3.18/18.scm

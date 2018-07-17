@@ -5,14 +5,14 @@
 (load "../common/add-streams.scm")
 
 (define (RLC R C L dt)
-	(define (vc-il vc0 il0)
-	  (define vc (integral (delay dvc) vc0 dt))
-	  (define il (integral (delay dil) il0 dt))
-	  (define dvc (scale-stream il (/ -1 C)))
-	  (define dil (add-streams (scale-stream vc (/ 1 L))
-							   (scale-stream il (- (/ R L)))))
-	  (stream-map cons vc il)) ; vc 和 il 为 stream
-	vc-il)
+    (define (vc-il vc0 il0)
+      (define vc (integral (delay dvc) vc0 dt))
+      (define il (integral (delay dil) il0 dt))
+      (define dvc (scale-stream il (/ -1 C)))
+      (define dil (add-streams (scale-stream vc (/ 1 L))
+                               (scale-stream il (- (/ R L)))))
+      (stream-map cons vc il)) ; vc 和 il 为 stream
+    vc-il)
 
 ;; test
 (define RLC1 (RLC 1 0.2 1 0.1))

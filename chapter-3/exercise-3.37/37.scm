@@ -9,34 +9,34 @@
 
 (define (c+ x y)
   (let ((z (make-connector)))
-	(adder x y z)
-	z))
+    (adder x y z)
+    z))
 
 (define (c- x y)
   (let ((z (make-connector)))
-	(adder y z x)
-	z))
+    (adder y z x)
+    z))
 
 (define (c* x y)
   (let ((z (make-connector)))
-	(multiplier x y z)
-	z))
+    (multiplier x y z)
+    z))
 
 (define (c/ x y)
   (let ((z (make-connector)))
-	(multiplier y z x)
-	z))
+    (multiplier y z x)
+    z))
 
 (define (cv value)
   (let ((cv (make-connector)))
-	(constant value cv)
-	cv))
+    (constant value cv)
+    cv))
 
 ;; test
 (define (celsius-fahrenheit-converter x)
   (c+ (c* (c/ (cv 9) (cv 5))
-		  x)
-	  (cv 32)))
+          x)
+      (cv 32)))
 
 (define C (make-connector))
 (define F (celsius-fahrenheit-converter C))
@@ -46,18 +46,18 @@
 
 (set-value! C 25 'user)
 ; 输出:
-;	Probe: Celsius temp = 25
-;	Probe: Fahrenheit temp = 77
+;   Probe: Celsius temp = 25
+;   Probe: Fahrenheit temp = 77
 
 (forget-value! C 'user)
 ; 输出:
-;	Probe: Celsius temp = ?
-;	Probe: Fahrenheit temp = ?
+;   Probe: Celsius temp = ?
+;   Probe: Fahrenheit temp = ?
 
 (set-value! F 212 'user)
 ; 输出:
-;	Probe: Fahrenheit temp = 212
-;	Probe: Celsius temp = 100
+;   Probe: Fahrenheit temp = 212
+;   Probe: Celsius temp = 100
 
 (set-value! C 50 'user)
 ;Contradiction (100 50)

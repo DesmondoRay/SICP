@@ -6,8 +6,8 @@
 ;; 类似于多项式的乘法，s1的第一项与s2的所有数相乘，加上s1的第二项与s2的所有项相乘，...
 (define (mul-series s1 s2)
   (cons-stream (* (stream-car s1) (stream-car s2))
-			   (add-streams (scale-stream (stream-cdr s2) (stream-car s1))
-							(mul-series (stream-cdr s1) s2))))
+               (add-streams (scale-stream (stream-cdr s2) (stream-car s1))
+                            (mul-series (stream-cdr s1) s2))))
 
 (define (mul-streams s1 s2)
   (stream-map * s1 s2))

@@ -9,11 +9,11 @@
 
 (define (average a b c)
   (let ((sum (make-connector))
-		(two (make-connector)))
-	(constant 2 two)
-	(adder a b sum)
-	(multiplier two c sum)
-	'ok))
+        (two (make-connector)))
+    (constant 2 two)
+    (adder a b sum)
+    (multiplier two c sum)
+    'ok))
 
 ;; test
 (define a (make-connector))
@@ -29,19 +29,19 @@
 (set-value! b 6 'user)
 
 ; 输出:
-;	Probe: a = 10
-;	Probe: b = 6
-;	Probe: c = 8
+;   Probe: a = 10
+;   Probe: b = 6
+;   Probe: c = 8
 
 (forget-value! a 'user)
 ; 输出:
-;	Probe: a = ?
-;	Probe: c = ?
+;   Probe: a = ?
+;   Probe: c = ?
 
 (set-value! c 5 'user)
 ; 输出:
-;	Probe: c = 5
-;	Probe: a = 4
+;   Probe: c = 5
+;   Probe: a = 4
 
 (set-value! a 5 'user)
 ;Contradiction (4 5)

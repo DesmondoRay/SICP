@@ -13,9 +13,9 @@
 
 (define (weight l)
   (define (weight-inner a b)
-	(+ (* 2 a)
-	   (* 3 b)
-	   (* 5 a b)))
+    (+ (* 2 a)
+       (* 3 b)
+       (* 5 a b)))
   (apply weight-inner l))
 ;; test
 (weight (list 2 3))
@@ -31,6 +31,6 @@
 
 ;; 前10个pair对应的 (2i + 3j + 5ij) 值
 (map (lambda (x) (weight x))
-	 (stream-head pairs-235 10))
+     (stream-head pairs-235 10))
 ; 结果: (30 43 56 60 69 78 82 96 100 108)
 

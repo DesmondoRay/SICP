@@ -6,10 +6,10 @@
 
 (define (RC R C dt)
   (lambda (i v0)
-	(define v
-	  (add-streams (scale-stream i R)
-				   (integral (scale-stream i (/ 1 C)) v0 dt)))
-	v))
+    (define v
+      (add-streams (scale-stream i R)
+                   (integral (scale-stream i (/ 1 C)) v0 dt)))
+    v))
 
 (define RC1 (RC 5 1 0.5))
 

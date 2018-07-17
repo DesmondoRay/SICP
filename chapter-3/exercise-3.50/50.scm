@@ -5,15 +5,15 @@
 
 (define (stream-map proc . argstreams)
   (if (null? (car argstreams))
-	  the-empty-stream
-	  (cons-stream
-	   (apply proc (map (lambda (s)
-						  (stream-car s))
-						argstreams))
-	   (apply stream-map
-			  (cons proc (map (lambda (s)
-								(stream-cdr s))
-							  argstreams))))))
+      the-empty-stream
+      (cons-stream
+       (apply proc (map (lambda (s)
+                          (stream-car s))
+                        argstreams))
+       (apply stream-map
+              (cons proc (map (lambda (s)
+                                (stream-cdr s))
+                              argstreams))))))
 
 ;; test
 (define s1 (stream-enumerate-interval 1 10))
@@ -23,14 +23,14 @@
 (display-stream s)
 
 #|输出:
-	2
-	4
-	6
-	8
-	10
-	12
-	14
-	16
-	18
-	20
+    2
+    4
+    6
+    8
+    10
+    12
+    14
+    16
+    18
+    20
 |#

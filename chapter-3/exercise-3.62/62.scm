@@ -4,9 +4,9 @@
 
 (define (div-series s1 s2)
   (if (= (stream-car s2) 0)
-	  (error "Divide by 0 -- DIV-SERIES" (stream-car s2))
-	  (mul-series s1
-				  (reciprocal-series s2))))
+      (error "Divide by 0 -- DIV-SERIES" (stream-car s2))
+      (mul-series s1
+                  (reciprocal-series s2))))
 
 ;; test
 (define s (stream-enumerate-interval 1 10)) ; s为 1～10 的流

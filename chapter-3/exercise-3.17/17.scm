@@ -2,20 +2,20 @@
 
 (define (in-list l x)
   (cond ((null? l) #f)
-		((eq? (car l) x)
-		 #t)
-		(else
-		 (in-list (cdr l) x))))
+        ((eq? (car l) x)
+         #t)
+        (else
+         (in-list (cdr l) x))))
 
 (define (count-pairs x)
   (define (internal x counted-list)
-	(cond ((not (pair? x)) 0)
-		  ((in-list counted-list x)
-		   0)
-		  (else
-		   (+ (internal (car x) (append counted-list (car x)))
-			  (internal (cdr x) (append counted-list (cdr x)))
-			  1))))
+    (cond ((not (pair? x)) 0)
+          ((in-list counted-list x)
+           0)
+          (else
+           (+ (internal (car x) (append counted-list (car x)))
+              (internal (cdr x) (append counted-list (cdr x)))
+              1))))
   (internal x '()))
 
 ;; test

@@ -3,15 +3,15 @@
 
 (define (print-queue queue)
   (define (print-inner l)
-	(if (null? l)
-		(newline)
-		(begin
-		 (display (car l))
-		 (display " ")
-		 (print-inner (cdr l)))))
+    (if (null? l)
+        (newline)
+        (begin
+         (display (car l))
+         (display " ")
+         (print-inner (cdr l)))))
   (if (empty-queue? queue)
-	  (display '())
-	  (print-inner (front-ptr queue))))
+      (display '())
+      (print-inner (front-ptr queue))))
 
 ;; test
 (define q1 (make-queue))

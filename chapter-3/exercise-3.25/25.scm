@@ -2,44 +2,44 @@
 
 (define (make-table)
   (let ((local-table (list '*table*)))
-	; 定义内部lookup，需要两个参数: 关键码列表和一个表格
-	(define (lookup-internal key-list subtable)
-	  (let ((record (assoc (car key-list) (cdr subtable))))
-		(if record
-			(let ((rest-keys (cdr key-list)))
-			  (if (null? rest-keys)
-				  (cdr record)
-				  (lookup-internal rest-keys record)))
-			false)))
-	; 定义外部lookup，只需要关键码列表一个参数
-	(define (lookup key-list)
-	  (lookup-internal key-list local-table))
-	
-	; 定义内部insert!，三个参数: 关键码列表，值，表格
-	(define (insert!-internal key-list value subtable)
-	  (let ((record (assoc (car key-list) (cdr subtable)))
-			(first-key (car key-list))
-			(rest-keys (cdr key-list)))
-		(if record
-			(if (null? rest-keys)
-				(set-cdr! record value)
-				(insert!-internal rest-keys value record))
-			(if (null? rest-keys)
-				(set-cdr! subtable (cons (cons first-key value)
-										 (cdr subtable)))
-				(begin
-				 (set-cdr! subtable (cons (list first-key)
-										  (cdr subtable)))
-				 (insert!-internal rest-keys value (cadr subtable)))))))
-	; 定义外部insert!，两个参数: 关键码列表，值
-	(define (insert! key-list value)
-	  (insert!-internal key-list value local-table))
-	
-	(define (dispatch m)
-	  (cond ((eq? m 'lookup-proc) lookup)
-			((eq? m 'insert-proc!) insert!)
-			((eq? m 'display) (display local-table))
-			(else (error "Unknown opeartion -- TABLE" m))))
+    ; 定义内部lookup，需要两个参数: 关键码列表和一个表格
+    (define (lookup-internal key-list subtable)
+      (let ((record (assoc (car key-list) (cdr subtable))))
+        (if record
+            (let ((rest-keys (cdr key-list)))
+              (if (null? rest-keys)
+                  (cdr record)
+                  (lookup-internal rest-keys record)))
+            false)))
+    ; 定义外部lookup，只需要关键码列表一个参数
+    (define (lookup key-list)
+      (lookup-internal key-list local-table))
+    
+    ; 定义内部insert!，三个参数: 关键码列表，值，表格
+    (define (insert!-internal key-list value subtable)
+      (let ((record (assoc (car key-list) (cdr subtable)))
+            (first-key (car key-list))
+            (rest-keys (cdr key-list)))
+        (if record
+            (if (null? rest-keys)
+                (set-cdr! record value)
+                (insert!-internal rest-keys value record))
+            (if (null? rest-keys)
+                (set-cdr! subtable (cons (cons first-key value)
+                                         (cdr subtable)))
+                (begin
+                 (set-cdr! subtable (cons (list first-key)
+                                          (cdr subtable)))
+                 (insert!-internal rest-keys value (cadr subtable)))))))
+    ; 定义外部insert!，两个参数: 关键码列表，值
+    (define (insert! key-list value)
+      (insert!-internal key-list value local-table))
+    
+    (define (dispatch m)
+      (cond ((eq? m 'lookup-proc) lookup)
+            ((eq? m 'insert-proc!) insert!)
+            ((eq? m 'display) (display local-table))
+            (else (error "Unknown opeartion -- TABLE" m))))
   dispatch))
 
 

@@ -2,10 +2,10 @@
 
 (define (count-pairs x)
   (if (not (pair? x))
-	  0
-	  (+ (count-pairs (car x))
-		 (count-pairs (cdr x))
-		 1)))
+      0
+      (+ (count-pairs (car x))
+         (count-pairs (cdr x))
+         1)))
 
 ;; test
 ; count-pairs = 3
@@ -39,5 +39,5 @@
 (newline)
 (display (count-pairs d))
 ; 输出: 
-;	... aborted
+;   ... aborted
 

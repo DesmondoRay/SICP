@@ -16,7 +16,7 @@
  (stream-ref factorials 5)
  (stream-ref factorials 7))
 ; 输出:
-;	6
-;	120
-;	5040
+;   6
+;   120
+;   5040
 

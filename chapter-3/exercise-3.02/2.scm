@@ -2,12 +2,12 @@
 
 (define (make-monitored proc)
   (let ((count 0))
-	(lambda (x)
-	  (cond ((eq? x 'how-many-calls?) count)
-			((eq? x 'reset-count) (set! count 0))
-			(else
-			 (begin (set! count (+ count 1))
-					(proc x)))))))
+    (lambda (x)
+      (cond ((eq? x 'how-many-calls?) count)
+            ((eq? x 'reset-count) (set! count 0))
+            (else
+             (begin (set! count (+ count 1))
+                    (proc x)))))))
 
 ;; test
 (define s (make-monitored sqrt))
@@ -21,6 +21,6 @@
 (display (s 'how-many-calls?))
 
 ;; 测试结果:
-;	10
-;	1
-;	0
+;   10
+;   1
+;   0

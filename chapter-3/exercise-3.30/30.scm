@@ -4,18 +4,18 @@
 
 (define (ripple-carry-adder list-a list-b list-s c)
   (define (iter list-a list-b list-s value-of-c)
-	(if (null? list-a)
-		'ok
-		(let ((ak (car list-a))
-			  (bk (car list-b))
-			  (sk (car list-s))
-			  (rest-a (cdr list-a))
-			  (rest-b (cdr list-b))
-			  (rest-s (cdr list-s))
-			  (ck (make-wire)))
-		  (set-signal! ck value-of-c)
-		  (full-adder ak bk ck sk c)
-		  (iter rest-a rest-b rest-s (get-signal c)))))
+    (if (null? list-a)
+        'ok
+        (let ((ak (car list-a))
+              (bk (car list-b))
+              (sk (car list-s))
+              (rest-a (cdr list-a))
+              (rest-b (cdr list-b))
+              (rest-s (cdr list-s))
+              (ck (make-wire)))
+          (set-signal! ck value-of-c)
+          (full-adder ak bk ck sk c)
+          (iter rest-a rest-b rest-s (get-signal c)))))
   (iter list-a list-b list-s 0))
 
 ;; test
@@ -32,8 +32,8 @@
 (newline)
 (newline)
 ; 结果:
-;	0
-;	0
+;   0
+;   0
 
 (set-signal! a1 1)
 (ripple-carry-adder (list a1) (list b1) (list s1) c)
@@ -44,8 +44,8 @@
 (newline)
 (newline)
 ; 结果:
-;	1
-;	0
+;   1
+;   0
 
 (set-signal! b1 1)
 (ripple-carry-adder (list a1) (list b1) (list s1) c)
@@ -56,8 +56,8 @@
 (newline)
 (newline)
 ; 结果:
-;	0
-;	1
+;   0
+;   1
 
 (define a2 (make-wire))
 (define b2 (make-wire))
@@ -73,7 +73,7 @@
 (display (get-signal c))
 (newline)
 ; 结果:
-;	0
-;	1
-;	1
+;   0
+;   1
+;   1
 

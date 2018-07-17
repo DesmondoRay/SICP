@@ -3,9 +3,9 @@
 ;; 范围内的随机数，b > a
 (define (random-range a b)
   (cons-stream (+ a
-				  (/ (random (* 1000 (- b a))) 
-					 1000))
-			   (random-range a b)))
+                  (/ (random (* 1000 (- b a))) 
+                     1000))
+               (random-range a b)))
 ;; test: random-range
 ; (display (stream-head (random-range 2.0 8) 10))
 #| output: 
@@ -18,14 +18,14 @@
 ;; 生成测试结果的流
 (define (p-test x1 x2 y1 y2)
   (let ((x-stream (random-range x1 x2))
-		(y-stream (random-range y1 y2))
-		(avg-x (/ (+ x2 x1) 2))
-		(avg-y (/ (+ y2 y1) 2))
-		(radius (/ (- x2 x1) 2)))
-	(stream-map (lambda (x y) (<= (+ (square (- x avg-x))
-									 (square (- y avg-y)))
-								  (square radius)))
-				x-stream y-stream)))
+        (y-stream (random-range y1 y2))
+        (avg-x (/ (+ x2 x1) 2))
+        (avg-y (/ (+ y2 y1) 2))
+        (radius (/ (- x2 x1) 2)))
+    (stream-map (lambda (x y) (<= (+ (square (- x avg-x))
+                                     (square (- y avg-y)))
+                                  (square radius)))
+                x-stream y-stream)))
 ; test: p-test
 ; (define test-result (p-test 2.0 8 4 10))
 ; (display (stream-head test-result 10))
@@ -35,12 +35,12 @@
 ;; page 246
 (define (monte-carlo experiment-stream passed failed)
   (define (next passed failed)
-	(cons-stream (/ passed (+ passed failed))
-				 (monte-carlo 
-				  (stream-cdr experiment-stream) passed failed)))
+    (cons-stream (/ passed (+ passed failed))
+                 (monte-carlo 
+                  (stream-cdr experiment-stream) passed failed)))
   (if (stream-car experiment-stream)
-	  (next (+ passed 1) failed)
-	  (next passed (+ failed 1))))
+      (next (+ passed 1) failed)
+      (next passed (+ failed 1))))
 ; test: monte-carlo
 ; (define test-result (p-test 2.0 8 4 10))
 ; (define monte (monte-carlo test-result 0 0))
@@ -52,7 +52,7 @@
 ;; 假定 x2 > x1, y2 > y1
 (define (estimate-integral p x1 x2 y1 y2)
   (stream-map (lambda (n) (* n (* (- x2 x1) (- y2 y1))))
-			  (monte-carlo (p x1 x2 y1 y2) 0 0)))
+              (monte-carlo (p x1 x2 y1 y2) 0 0)))
 ; test: estimate-integral
 ; (define estimate (estimate-integral p-test 2.0 8 4 10))
 ; (display (stream-head estimate 10))
@@ -62,7 +62,7 @@
 ;; 计算pi值
 (define estimate-pi
   (stream-map (lambda (n) (/ n 900))
-			  (estimate-integral p-test 20.0 80 40 100)))
+              (estimate-integral p-test 20.0 80 40 100)))
 
 
 ;; test

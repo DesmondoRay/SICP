@@ -8,9 +8,9 @@
   (define dy (integral (delay ddy) dy0 dt))
   (define y  (integral (delay dy) y0 dt))
   (define ddy
-	(scale-stream
-	 (stream-map f (scale-stream dy (/ 1 dt)) y)
-	 (square dt)))
+    (scale-stream
+     (stream-map f (scale-stream dy (/ 1 dt)) y)
+     (square dt)))
   y)
 
 ;; test

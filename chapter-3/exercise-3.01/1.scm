@@ -2,8 +2,8 @@
 
 (define (make-accumulator sum)
   (lambda (number)
-	(begin (set! sum (+ sum number))
-		   sum)))
+    (begin (set! sum (+ sum number))
+           sum)))
 
 ;; test
 (define A (make-accumulator 5))

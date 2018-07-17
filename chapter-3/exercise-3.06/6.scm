@@ -6,16 +6,16 @@
 
 (define (rand-internal init-value)
   (let ((x init-value))
-	(lambda (symbol)
-	  (cond ((eq? symbol 'generate)
-			 (set! x (rand-update x))
-		     x)
-		    ((eq? symbol 'reset)
-		     (lambda (new-value)
-			   (set! x new-value)))
-		    (else
-		     (error "Unknown request -- RAND" 
-					symbol))))))
+    (lambda (symbol)
+      (cond ((eq? symbol 'generate)
+             (set! x (rand-update x))
+             x)
+            ((eq? symbol 'reset)
+             (lambda (new-value)
+               (set! x new-value)))
+            (else
+             (error "Unknown request -- RAND" 
+                    symbol))))))
 
 ;; test
 (define rand (rand-internal 100))
@@ -35,11 +35,11 @@
 (display (rand 'generate))
 
 ;; 结果输出:
-;	59
-;	95
-;	51
+;   59
+;   95
+;   51
 ;
-;	59
-;	95
-;	51
+;   59
+;   95
+;   51
 

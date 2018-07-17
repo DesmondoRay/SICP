@@ -11,26 +11,26 @@
 
 (define (adjoin-set x set)
   (cond ((null? set) (make-tree x '() '()))
-		((= (car x) (car (entry set))) set)
-		((< (car x) (car (entry set)))
-		 (make-tree (entry set)
-					(adjoin-set x (left-branch set))
-					(right-branch set)))
-		((> (car x) (car (entry set)))
-		 (make-tree (entry set)
-					(left-branch set)
-					(adjoin-set x (right-branch set))))))
+        ((= (car x) (car (entry set))) set)
+        ((< (car x) (car (entry set)))
+         (make-tree (entry set)
+                    (adjoin-set x (left-branch set))
+                    (right-branch set)))
+        ((> (car x) (car (entry set)))
+         (make-tree (entry set)
+                    (left-branch set)
+                    (adjoin-set x (right-branch set))))))
 
 (define (lookup given-key set)
   (if (null? set) 
-	  false
-	  (let ((key (car (entry set))))
-		(cond ((= given-key key)
-			   (cdr (car set)))
-			  ((< given-key key)
-			   (lookup given-key (left-branch set)))
-			  ((> given-key key)
-			   (lookup given-key (right-branch set)))))))
+      false
+      (let ((key (car (entry set))))
+        (cond ((= given-key key)
+               (cdr (car set)))
+              ((< given-key key)
+               (lookup given-key (left-branch set)))
+              ((> given-key key)
+               (lookup given-key (right-branch set)))))))
 
 
 ;; test
