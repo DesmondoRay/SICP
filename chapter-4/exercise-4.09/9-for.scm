@@ -6,8 +6,8 @@
    可以将多余的初始化语句放在for循环外部，将多余的更新语句放在for循环内部。
 for example:
 (for ((set! i 1) 
-	  (< i 5) 
-	  (set! i (+ 1 i)))
+      (< i 5) 
+      (set! i (+ 1 i)))
 	 ((set! a (+ a i))
 	  (set! b (* b i))))
 相当于C语言： 
@@ -21,7 +21,7 @@ for (i = 1; i < 5; i++) {
 
 (define (for? exp) (tagged-list exp 'for)) ; 使用数据导向的话，可省略
 
-(define (for-initialize exp) (car (cadr exp)))  ; 初始化：(set! i 0)
+(define (for-initialize exp) (car (cadr exp)))  ; 初始化：(set! i 1)
 
 (define (for-test exp) (cadr (cadr exp))) ; 测试语句：(< i 5)
 
@@ -29,8 +29,8 @@ for (i = 1; i < 5; i++) {
 
 (define (for-body exp) (caddr exp))
 
-#| test
-(define f '(for ((set! i 0) (< i 5) (set! i (+ 1 i)))
+#| 测试for语句到选择函数：
+(define f '(for ((set! i 1) (< i 5) (set! i (+ 1 i)))
 				((set! a (+ a i))
 				 (set! b (* b i)))))
 
@@ -40,7 +40,7 @@ for (i = 1; i < 5; i++) {
 	   (for-update f)
 	   (for-body f))
 output:
-(set! i 0)
+(set! i 1)
 (< i 5)
 (set! i (+ 1 i))
 ((set! a (+ a i)) (set! b (* b i)))
@@ -60,8 +60,8 @@ output:
 (define (for->combination exp)
   ; 生成for-proc: '(for-iter)，作为一个无参数到过程
   (let ((for-proc (cons for-func-name '())))
-	(let ((define-body (make-if (for-test exp)
-								(sequence->exp
+    (let ((define-body (make-if (for-test exp)
+                                (sequence->exp
 								 (append (for-body exp)
 										 (list (for-update exp) for-proc)))
 								'true)))
