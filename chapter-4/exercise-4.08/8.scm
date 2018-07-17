@@ -60,9 +60,9 @@
 ;;; M-Eval input: 
 (define (fib n)
   (let fib-iter ((a 1) (b 0) (count n))
-	(if (= count 0)
-		b
-		(fib-iter (+ a b) a (- count 1)))))
+    (if (= count 0)
+        b
+        (fib-iter (+ a b) a (- count 1)))))
 
 ;;; M-Eval value: 
 ok

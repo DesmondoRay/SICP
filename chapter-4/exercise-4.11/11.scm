@@ -17,10 +17,10 @@
 ;; 将scan定义在外部
 (define (scan frame var)
   (if (null? frame)
-	  '()
-	  (if (eq? var (car (first-pair frame)))
-		  (first-pair frame)
-		  (scan (rest-pairs frame) var))))
+      '()
+      (if (eq? var (car (first-pair frame)))
+          (first-pair frame)
+          (scan (rest-pairs frame) var))))
 
 (define (lookup-variable-value var env)
   (define (env-loop env)
@@ -38,7 +38,7 @@
     (if (eq? env the-empty-environment)
         (error "Unbound variable: SET!" var)
         (let ((frame (frame-pairs (first-frame env))))
-		  (let ((scan-result (scan frame var)))
+          (let ((scan-result (scan frame var)))
         (if (null? scan-result)
             (env-loop (enclosing-environment env))
             (set-cdr! scan-result val))))))

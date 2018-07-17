@@ -4,8 +4,8 @@
 #|
  for example:
 (while (> a 0)
-	   ((set! b (+ b a))
-	    (set! a (- a 1))))
+       ((set! b (+ b a))
+        (set! a (- a 1))))
 相当于C语言： 
 while (a > 0)
     b += a--;
@@ -36,8 +36,8 @@ while (a > 0)
   (let ((while-proc (cons while-func-name '())))
     (let ((define-body (make-if (while-test exp)
                                 (sequence->exp 
-								 (append (while-body exp) (list while-proc)))
-								'true)))
+                                 (append (while-body exp) (list while-proc)))
+                                'true)))
       (sequence->exp
        (list 
         (make-definition while-proc define-body)  ; 定义(while-iter)
@@ -65,8 +65,8 @@ ok
 
 ;;; M-Eval input: 
 (while (> a 0)
-	   ((set! b (+ b a))
-		(set! a (- a 1))))
+       ((set! b (+ b a))
+        (set! a (- a 1))))
 
 ;;; M-Eval value: 
 #t

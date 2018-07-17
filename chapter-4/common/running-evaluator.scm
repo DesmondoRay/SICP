@@ -8,16 +8,16 @@
 
 (define (primitive-procedure-objects)
   (map (lambda (proc) (list 'primitive (cadr proc)))
-	   primitive-procedures))
+       primitive-procedures))
 
 (define (setup-environment)
   (let ((initial-env
-		 (extend-environment (primitive-procedure-names)
-							 (primitive-procedure-objects)
-							 the-empty-environment)))
-	(define-variable! 'true true initial-env)
-	(define-variable! 'false false initial-env)
-	initial-env))
+         (extend-environment (primitive-procedure-names)
+                             (primitive-procedure-objects)
+                             the-empty-environment)))
+    (define-variable! 'true true initial-env)
+    (define-variable! 'false false initial-env)
+    initial-env))
 
 (define the-global-environment (setup-environment))
 
@@ -36,9 +36,9 @@
 (define (driver-loop)
   (prompt-for-input input-prompt)
   (let ((input (read)))
-	(let ((output (eval-in-4 input the-global-environment)))
-	  (announce-output output-prompt)
-	  (user-print output)))
+    (let ((output (eval-in-4 input the-global-environment)))
+      (announce-output output-prompt)
+      (user-print output)))
   (driver-loop))
 
 (define apply-in-underlying-scheme apply)
@@ -50,11 +50,11 @@
 
 (define (user-print object)
   (if (compound-procedure? object)
-	  (display (list 'compound-procedure
-					 (procedure-parameters object)
-					 (procedure-body object)
-					 '<procedure-env>))
-	  (display object)))
+      (display (list 'compound-procedure
+                     (procedure-parameters object)
+                     (procedure-body object)
+                     '<procedure-env>))
+      (display object)))
 
 (define the-global-environment (setup-environment))
 

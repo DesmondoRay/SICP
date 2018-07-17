@@ -7,7 +7,7 @@
   (put 'op 'define eval-definition)
   (put 'op 'if eval-if)
   (put 'op 'lambda (lambda (exp env)
-					 (make-procedure (lambda-parameters exp) (lambda-body exp) env)))
+                     (make-procedure (lambda-parameters exp) (lambda-body exp) env)))
   (put 'op 'begin (lambda (exp env)
                     (eval-sequence (begin-actions exp) env)))
   (put 'op 'cond (lambda (exp env)

@@ -13,13 +13,12 @@
 
 (define (let*-body code) (cadr code)) 
 
-(define (let*-rest code)	; 剩余的(<var><exp>) 和 <body>
+(define (let*-rest code)    ; 剩余的(<var><exp>) 和 <body>
   (list (let*-rest-vars-exps code) 
-		(let*-body code)))
+        (let*-body code)))
 
 ; 判断是否为最后一个(<var><exp>)
 (define (last-var-exp? code) (null? (cdar code))) 
-
 
 (define (eval-let* exp env)
   (eval-in-4 (let*->nested-lets (let*-code exp)) env))
@@ -29,10 +28,10 @@
 
 (define (let*->nested-lets exp)
   (if (last-var-exp? exp)
-	  (make-let (let*-first-var-exp exp)
-				(let*-body exp))
-	  (make-let (let*-first-var-exp exp)
-				(let*->nested-lets (let*-rest exp)))))
+      (make-let (let*-first-var-exp exp)
+                (let*-body exp))
+      (make-let (let*-first-var-exp exp)
+                (let*->nested-lets (let*-rest exp)))))
 
 ;; 将eval-let加入table
 (put 'op 'let* eval-let*)
@@ -44,8 +43,8 @@
 
 ;;; M-Eval input: 
 (let* ((x 3) 
-	   (y (+ x 2)) 
-	   (z (+ x y 5))) 
+      (y (+ x 2)) 
+      (z (+ x y 5))) 
   (* x z))
 
 ;;; M-Eval value: 

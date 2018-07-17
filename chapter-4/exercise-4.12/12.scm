@@ -3,10 +3,10 @@
 ;; 将scan定义在外部
 (define (scan vars vals var)
   (cond ((null? vars)
-		 '())
-		((eq? var (car vars))
-		 vals)
-		(else (scan (cdr vars) (cdr vals) var))))
+         '())
+        ((eq? var (car vars))
+         vals)
+        (else (scan (cdr vars) (cdr vals) var))))
 
 (define (lookup-variable-value var env)
   (display "*** 4.12 test -- lookup-variable-value ***") ; 用于测试
@@ -28,7 +28,7 @@
     (if (eq? env the-empty-environment)
         (error "Unbound variable: SET!" var)
         (let ((frame (first-frame env)))
-		  (let ((scan-result (scan (frame-variables frame)
+          (let ((scan-result (scan (frame-variables frame)
                                (frame-values frame)
                                var)))
         (if (null? scan-result)

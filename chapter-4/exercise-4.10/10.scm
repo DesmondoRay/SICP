@@ -7,8 +7,8 @@
 ;  如(+ 1 2 3),而不是(1 + 2 + 3)，因为 + 过程可以接受可变数量参数
 
 ;; 作为练习:
-;	定义(x ^ y)，计算x的y次方，相当于(expt x y)
-;	定义(x % y)，计算x除以y的余数，相当于(remainder x y)
+;   定义(x ^ y)，计算x的y次方，相当于(expt x y)
+;   定义(x % y)，计算x除以y的余数，相当于(remainder x y)
 
 (load "../exercise-4.03/3.scm")
 
@@ -19,7 +19,7 @@
 (define (second-operand exp) (caddr exp)) ; 第2个操作数
 
 (define (operands exp) 
-  (list (first-operand exp) (second-operand exp)))				 
+  (list (first-operand exp) (second-operand exp)))               
 
 
 #|
@@ -27,7 +27,7 @@
 (define new-syntax (list 2 expt 3))
 (load "../common/print.scm")
 (print (operator new-syntax)
-	   (operands new-syntax))
+       (operands new-syntax))
 output:
 #[compiled-procedure 13 (arith #xdd) #x1a #x11fd70a]
 (2 3)

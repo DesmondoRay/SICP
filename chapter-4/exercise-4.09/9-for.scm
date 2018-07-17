@@ -8,8 +8,8 @@ for example:
 (for ((set! i 1) 
       (< i 5) 
       (set! i (+ 1 i)))
-	 ((set! a (+ a i))
-	  (set! b (* b i))))
+     ((set! a (+ a i))
+      (set! b (* b i))))
 相当于C语言： 
 for (i = 1; i < 5; i++) {
     a += i;
@@ -61,15 +61,15 @@ output:
   ; 生成for-proc: '(for-iter)，作为一个无参数到过程
   (let ((for-proc (cons for-func-name '())))
     (let ((define-body (make-if (for-test exp)
-								(sequence->exp
-								 (append (for-body exp)
-										 (list (for-update exp) for-proc)))
-								'true)))
-	  (sequence->exp
-	   (list
-		(for-initialize exp)  ; 初始化
-		(make-definition for-proc define-body)  ; 定义(for-iter)
-		(make-application for-func-name '()))))))  ; 执行(for-iter)
+                                (sequence->exp
+                                 (append (for-body exp)
+                                         (list (for-update exp) for-proc)))
+                                'true)))
+      (sequence->exp
+       (list
+        (for-initialize exp)  ; 初始化
+        (make-definition for-proc define-body)  ; 定义(for-iter)
+        (make-application for-func-name '()))))))  ; 执行(for-iter)
 
 ;; 将eval-for加入元循环求值器
 (put 'op 'for eval-for)
@@ -99,8 +99,8 @@ ok
 
 ;;; M-Eval input: 
 (for ((set! i 1) (< i 5) (set! i (+ 1 i)))
-	 ((set! a (+ a i))
-	  (set! b (* b i))))
+     ((set! a (+ a i))
+      (set! b (* b i))))
 
 ;;; M-Eval value: 
 #t

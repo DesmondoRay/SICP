@@ -6,8 +6,8 @@
 ;; 自求值表达式
 (define (self-evaluating? exp)
   (cond ((number? exp) true)
-		((string? exp) true)
-		(else false)))
+        ((string? exp) true)
+        (else false)))
 
 ;; 变量用符号表示
 (define (variable? exp) (symbol? exp))
@@ -21,8 +21,8 @@
 ;; tagged-list?
 (define (tagged-list? exp tag)
   (if (pair? exp)
-	  (eq? (car exp) tag)
-	  false))
+      (eq? (car exp) tag)
+      false))
 
 ;; 赋值
 (define (assignment? exp) 
@@ -38,14 +38,14 @@
 
 (define (definition-variable exp)
   (if (symbol? (cadr exp))
-	  (cadr exp)
-	  (caadr exp)))
+      (cadr exp)
+      (caadr exp)))
 
 (define (definition-value exp)
   (if (symbol? (cadr exp))
-	  (caddr exp)
-	  (make-lambda (cdadr exp)
-				   (cddr exp))))
+      (caddr exp)
+      (make-lambda (cdadr exp)
+                   (cddr exp))))
 
 ;; lambda表达式
 (define (lambda? exp) 
@@ -67,8 +67,8 @@
 
 (define (if-alternative exp)
   (if (not (null? (cdddr exp)))
-	  (cadddr exp)
-	  'false))
+      (cadddr exp)
+      'false))
 
 (define (make-if predicate consequent alternative)
   (list 'if predicate consequent alternative))
@@ -86,8 +86,8 @@
 
 (define (sequence->exp seq)
   (cond ((null? seq) seq)
-		((last-exp? seq) (first-exp seq))
-		(else (make-begin seq))))
+        ((last-exp? seq) (first-exp seq))
+        (else (make-begin seq))))
 
 (define (make-begin seq) (cons 'begin seq))
 

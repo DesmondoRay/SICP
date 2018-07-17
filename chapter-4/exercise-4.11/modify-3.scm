@@ -33,25 +33,25 @@
 ;; test(交互模式下)
 
 ;;; M-Eval input: 
-(list 1 'a "b")	; test: application? and self-evaluating?
+(list 1 'a "b") ; test: application? and self-evaluating?
 
 ;;; M-Eval value: 
 (1 a b)
 
 ;;; M-Eval input: 
-(define a 3)	; test: definition?
+(define a 3)    ; test: definition?
 
 ;;; M-Eval value: 
 ok
 
 ;;; M-Eval input: 
-a				; test: variable?
+a               ; test: variable?
 
 ;;; M-Eval value: 
 3
 
 ;;; M-Eval input: 
-(set! a 5)		; tets: assignment?
+(set! a 5)      ; tets: assignment?
 
 ;;; M-Eval value: 
 ok
@@ -66,7 +66,7 @@ a
 (if (= a 0) 
     0 
     (begin (display "positive") 
-           a))	; test: if? and begin?
+           a))  ; test: if? and begin?
 positive
 ;;; M-Eval value: 
 5
@@ -74,14 +74,14 @@ positive
 ;;; M-Eval input: 
 (cond ((= a 0) 0) 
       ((= a 3) 3) 
-      (else a))			; test: cond?
+      (else a))         ; test: cond?
 
 ;;; M-Eval value: 
 5
 
 ;;; M-Eval input: 
 (define x (lambda (a b) 
-            (+ a b)))				; test: lambda?
+            (+ a b)))               ; test: lambda?
 
 ;;; M-Eval value: 
 ok

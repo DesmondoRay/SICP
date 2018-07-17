@@ -25,7 +25,7 @@
 (put 'op 'let eval-let)
 
 ;; 或者在eval过程中加入：
-;	((let? exp) (eval-let exp env))
+;   ((let? exp) (eval-let exp env))
 
 
 #|
@@ -34,7 +34,7 @@
 
 ;;; M-Eval input: 
 (let ((a 3) 
-	  (b 4)) 
+      (b 4)) 
   (+ a b))
 
 ;;; M-Eval value: 
