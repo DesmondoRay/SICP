@@ -39,10 +39,10 @@
   (define (denom x) (cddr x))
   (define (numer x) (cadr x))
   (cond ((equal? (type-tag x) 'rational)
-		 (/ (numer x) (denom x)))
-		((equal? (type-tag x) 'real)
-		 (contents x))
-		((number? x)
-		 x)
-		(else
-		 (error "to-number: unknown type" x))))
+         (/ (numer x) (denom x)))
+        ((equal? (type-tag x) 'real)
+         (contents x))
+        ((number? x)
+         x)
+        (else
+         (error "to-number: unknown type" x))))

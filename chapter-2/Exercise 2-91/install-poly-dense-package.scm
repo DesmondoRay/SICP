@@ -16,23 +16,23 @@
   ;; 求第一个系数的相应的次数
   (define (order-first-coeff coeff-list)
     (- (length coeff-list) 1))
-	
+    
   ;; 得到剩下的系数表
   (define (rest-coeffs coeff-list)
     (cdr coeff-list))
   
   ;; 将系数表转换为项表
   (define (coeff-to-term-list c-list)
-	(if (null? c-list)
-		'()
-		(let ((c1 (first-coeff c-list))
-			  (o1 (order-first-coeff c-list)))
-		  (adjoin-term (make-term o1 c1)
-					   (coeff-to-term-list (rest-coeffs c-list))))))
+    (if (null? c-list)
+        '()
+        (let ((c1 (first-coeff c-list))
+              (o1 (order-first-coeff c-list)))
+          (adjoin-term (make-term o1 c1)
+                       (coeff-to-term-list (rest-coeffs c-list))))))
   
   ;; 将dense类型多项式的系数表转换为sparse类型多项式的项表
   (define (term-list p)
-	(coeff-to-term-list (coeff-list p)))
+    (coeff-to-term-list (coeff-list p)))
   
   
   ;; interface to the rest of the system

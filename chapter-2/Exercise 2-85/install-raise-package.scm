@@ -18,14 +18,14 @@
 
 (define (install-real-raise-package)
   (put 'raise '(real)
-	   (lambda (x)
-		 (make-complex-from-real-imag x 0)))
+       (lambda (x)
+         (make-complex-from-real-imag x 0)))
   'done)
 
 (define (install-complex-raise-package)
   (put 'raise '(complex)
-	   (lambda (x)
-		 (error "raise--reach the tower top")))
+       (lambda (x)
+         (error "raise--reach the tower top")))
   'done)
 
 (install-scheme-number-raise-package)

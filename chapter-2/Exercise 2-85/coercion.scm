@@ -15,8 +15,8 @@
 (put-coercion 'scheme-number 'scheme-number 
               scheme-number->scheme-number)
 (put-coercion 'rational 'rational
-			  rational->rational)
+              rational->rational)
 (put-coercion 'real 'real
-			  real->real)
+              real->real)
 (put-coercion 'complex 'complex
-			  complex->complex)
+              complex->complex)

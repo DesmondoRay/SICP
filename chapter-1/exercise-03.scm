@@ -7,11 +7,11 @@
 
 (define (min a b)
   (if (> a b)
-	  b
-	  a))
+      b
+      a))
 
 (define (sum-of-two-max x y z)
   (+ (max x y)
-	 (max (min x y) z)))
+     (max (min x y) z)))
 
 (sum-of-two-max 5 1 8)

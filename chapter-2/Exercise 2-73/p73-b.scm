@@ -1,10 +1,10 @@
 (define (install-sum-package)
   ;; internal procedures
   (define (make-sum a1 a2)
-  	(cond ((=number? a1 0) a2)
-		  ((=number? a2 0) a1)
-		  ((and (number? a1) (number? a2)) (+ a1 a2))
-		  (else (attach '+ a1 a2))))
+    (cond ((=number? a1 0) a2)
+          ((=number? a2 0) a1)
+          ((and (number? a1) (number? a2)) (+ a1 a2))
+          (else (attach '+ a1 a2))))
   
   (define (addend s) (car s))
 
@@ -16,9 +16,9 @@
   (put 'make-sum '+ make-sum)
   
   (put 'deriv '+
-	   (lambda (exp var)
-		 (make-sum (deriv (addend exp) var)
-				   (deriv (augend exp) var))))
+       (lambda (exp var)
+         (make-sum (deriv (addend exp) var)
+                   (deriv (augend exp) var))))
   
   'done)
 
@@ -37,10 +37,10 @@
   ;; internal procedures
   (define (make-product m1 m2)
     (cond ((or (=number? m1 0) (=number? m2 0)) 0)
-		  ((=number? m1 1) m2)
-		  ((=number? m2 1) m1)
-		  ((and (number? m1) (number? m2)) (* m1 m2))
-		  (else (attach-tag '* m1 m2))))
+          ((=number? m1 1) m2)
+          ((=number? m2 1) m1)
+          ((and (number? m1) (number? m2)) (* m1 m2))
+          (else (attach-tag '* m1 m2))))
   
   (define (multiplier p) (car p))
 
@@ -51,12 +51,12 @@
   (put 'multiplicand '* multiplicand)
   (put 'make-product '* make-product)
   (put 'deriv '*
-	   (lambda (exp var)
-		 (make-sum
-		  (make-product (multiplier exp)
-						(deriv (multiplicand exp) var))
-		  (make-product (deriv (multiplier exp) var)
-						(multiplicand exp)))))
+       (lambda (exp var)
+         (make-sum
+          (make-product (multiplier exp)
+                        (deriv (multiplicand exp) var))
+          (make-product (deriv (multiplier exp) var)
+                        (multiplicand exp)))))
   
   'done)
 

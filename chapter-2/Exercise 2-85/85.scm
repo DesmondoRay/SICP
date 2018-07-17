@@ -46,12 +46,12 @@
 (newline)
 ;;; 测试apply-generic
 (display (add (make-complex-from-real-imag 3 2)
-			  (make-complex-from-real-imag 3 -2)))
+              (make-complex-from-real-imag 3 -2)))
 (newline)
 (display (add (make-real 3.3)
-			  (make-real 3.7)))
+              (make-real 3.7)))
 (newline)
 (display (add (make-rational 3 2)
-			  (make-rational 1 2)))
+              (make-rational 1 2)))
 (newline)
 

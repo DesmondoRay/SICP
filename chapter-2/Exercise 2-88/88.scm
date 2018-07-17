@@ -47,5 +47,5 @@
 (display (neg (make-polynomial 'x term-list2)))
 (newline)
 (display (sub (make-polynomial 'x term-list1)
-			  (make-polynomial 'x term-list2)))
+              (make-polynomial 'x term-list2)))
 (newline)

@@ -35,10 +35,10 @@
 
 (newline)
 (display (add (make-polynomial 'x term-list1)
-			  (make-polynomial 'x term-list2)))
+              (make-polynomial 'x term-list2)))
 (newline)
 (display (mul (make-polynomial 'x term-list1)
-			  (make-polynomial 'x term-list2)))
+              (make-polynomial 'x term-list2)))
 (newline)
 (display (=zero? (make-polynomial 'x term-list3)))
 (newline)

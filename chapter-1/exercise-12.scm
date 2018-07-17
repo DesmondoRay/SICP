@@ -13,11 +13,11 @@
 
 (define (print-each n i)
   (cond ((<= i n)
-		 (display (count n i))
-		 (display " ")
-		 (print-each n (+ i 1)))
-		(else
-		 (newline))))
+         (display (count n i))
+         (display " ")
+         (print-each n (+ i 1)))
+        (else
+         (newline))))
 
 ;; 打印帕斯卡三角形
 (define (display-pascal n)
@@ -25,9 +25,9 @@
 
 (define (print-each-row n i)
   (cond ((<= i n)
-		 (print-row i)
-		 (print-each-row n (+ i 1)))
-		(display "done")))
+         (print-row i)
+         (print-each-row n (+ i 1)))
+        (display "done")))
 
 ;; test
 (newline)

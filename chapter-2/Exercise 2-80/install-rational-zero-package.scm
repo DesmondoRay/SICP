@@ -5,6 +5,6 @@
         (car x))
   
   (put '=zero? '(rational)
-	   (lambda (x)
-		 (= (numer x) 0)))
+       (lambda (x)
+         (= (numer x) 0)))
 'done)

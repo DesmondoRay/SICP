@@ -21,6 +21,6 @@
  (smallest-divisor 1999)
  (smallest-divisor 19999))
 ; 结果:
-;	199
-;	1999
-;	7
+;   199
+;   1999
+;   7

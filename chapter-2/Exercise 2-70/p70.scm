@@ -1,13 +1,13 @@
 (load "p69.scm")
 
 (define pairs (list (list 'A 2) 
-					(list 'NA 16) 
-					(list 'BOOM 1) 
-					(list 'SHA 3)
-					(list 'GET 2)
-					(list 'YIP 9)
-					(list 'JOB 2)
-					(list 'WAH 1)))
+                    (list 'NA 16) 
+                    (list 'BOOM 1) 
+                    (list 'SHA 3)
+                    (list 'GET 2)
+                    (list 'YIP 9)
+                    (list 'JOB 2)
+                    (list 'WAH 1)))
 
 (define tree (generate-buffman-tree pairs))
 

@@ -32,7 +32,7 @@
 
 ;;; 测试
 (display (add (make-complex-from-real-imag (make-rational 3 2) 4)
-			  (make-complex-from-real-imag 2 (make-rational 3 4))))
+              (make-complex-from-real-imag 2 (make-rational 3 4))))
 (newline)
 (display (magnitude (make-complex-from-real-imag (make-rational 3 2) 4)))
 (newline)

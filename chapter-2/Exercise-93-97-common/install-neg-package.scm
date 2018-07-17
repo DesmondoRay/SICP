@@ -29,20 +29,20 @@
 'done)
 
  ;;; exercise 2-88(求负操作)
-(define (install-polynomial-neg-package)		 
+(define (install-polynomial-neg-package)         
   (put 'neg '(polynomial)
-	   (lambda (x)
-		 (make-polynomial-sparse (variable x)
-								 (neg-terms (term-list x)))))
+       (lambda (x)
+         (make-polynomial-sparse (variable x)
+                                 (neg-terms (term-list x)))))
   'done)
 
 (define (neg-terms L)
   (if (empty-termlist? L)
-	  (the-empty-termlist)
-	  (let ((t1 (first-term L)))
-		(adjoin-term
-		 (make-term (order t1) (neg (coeff t1)))
-		 (neg-terms (rest-terms L))))))
+      (the-empty-termlist)
+      (let ((t1 (first-term L)))
+        (adjoin-term
+         (make-term (order t1) (neg (coeff t1)))
+         (neg-terms (rest-terms L))))))
 
 (define (install-neg-package)
   (install-scheme-number-neg-package)
