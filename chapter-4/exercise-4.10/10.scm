@@ -34,8 +34,9 @@ output:
 |#
 
 ;; 定义新操作
-(define new-operator (list (list '^ expt)
-						   (list '% remainder)))
+(define new-operator 
+  (list (list '^ expt)
+        (list '% remainder)))
 
 ;; 新操作的符号
 (define (new-operator-names)
@@ -49,8 +50,8 @@ output:
 ;; 为简化起见，将新操作直接添加到the-global-environment
 (define (new-environment)
   (extend-environment (new-operator-names)
-					  (new-operator-objects)
-					  the-global-environment))
+                      (new-operator-objects)
+                      the-global-environment))
 
 (set! the-global-environment (new-environment))
 
