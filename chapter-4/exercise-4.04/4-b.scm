@@ -14,27 +14,27 @@
 
 (define (and->if exps)
   (if (last-exp? exps)
-	  (first-exp exps)
-	  (make-if (first-exp exps) ;若first-exp为真，则以rest-exps作为参数调用and->if
-			   (and->if (rest-exps exps))
-			   'false)))
+      (first-exp exps)
+      (make-if (first-exp exps) ;若first-exp为真，则以rest-exps作为参数调用and->if
+               (and->if (rest-exps exps))
+               'false)))
 
 (define (eval-or exps env)
   (eval-in-4 (or->if exps) env))
 
 (define (or->if exps)
   (if (empty-exp? exps)
-	  'false
-	  (make-if (first-exp exps) ;若first-exp为真，则返回true
-			   (first-exp exps)
-			   (or->if (rest-exps exps))))) ; 否则以rest-exps作为参数调用or->if
+      'false
+      (make-if (first-exp exps) ;若first-exp为真，则返回true
+               (first-exp exps)
+               (or->if (rest-exps exps))))) ; 否则以rest-exps作为参数调用or->if
 
 
 ;; 将eval-and, eval-or加入table
 (put 'op 'and (lambda (exp env)
-				(eval-and (and-clauses exp) env)))
+                (eval-and (and-clauses exp) env)))
 (put 'op 'or (lambda (exp env)
-			   (eval-or (or-clauses exp) env)))
+               (eval-or (or-clauses exp) env)))
  
  
  #|
