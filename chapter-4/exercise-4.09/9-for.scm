@@ -31,14 +31,14 @@ for (i = 1; i < 5; i++) {
 
 #| 测试for语句到选择函数：
 (define f '(for ((set! i 1) (< i 5) (set! i (+ 1 i)))
-				((set! a (+ a i))
-				 (set! b (* b i)))))
+                ((set! a (+ a i))
+                 (set! b (* b i)))))
 
 (load "../common/print.scm")
 (print (for-initialize f)
-	   (for-test f)
-	   (for-update f)
-	   (for-body f))
+       (for-test f)
+       (for-update f)
+       (for-body f))
 output:
 (set! i 1)
 (< i 5)
@@ -61,7 +61,7 @@ output:
   ; 生成for-proc: '(for-iter)，作为一个无参数到过程
   (let ((for-proc (cons for-func-name '())))
     (let ((define-body (make-if (for-test exp)
-                                (sequence->exp
+								(sequence->exp
 								 (append (for-body exp)
 										 (list (for-update exp) for-proc)))
 								'true)))
