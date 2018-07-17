@@ -34,14 +34,14 @@ while (a > 0)
 (define (while->combination exp)
   ; 生成while-proc: '(while-iter)，作为一个无参数到过程
   (let ((while-proc (cons while-func-name '())))
-	(let ((define-body (make-if (while-test exp)
-								(sequence->exp 
+    (let ((define-body (make-if (while-test exp)
+                                (sequence->exp 
 								 (append (while-body exp) (list while-proc)))
 								'true)))
-	  (sequence->exp
-	   (list 
-		(make-definition while-proc define-body)  ; 定义(while-iter)
-		(make-application while-func-name '())))))) ; 执行(while-iter)
+      (sequence->exp
+       (list 
+        (make-definition while-proc define-body)  ; 定义(while-iter)
+        (make-application while-func-name '())))))) ; 执行(while-iter)
 
 ;; 将eval-while加入元循环求值器
 (put 'op 'while eval-while)
