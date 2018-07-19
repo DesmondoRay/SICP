@@ -15,7 +15,7 @@
                          env))
         ((begin? exp)
          (eval-sequence (begin-actions exp) env))
-        ((cond? exp) (eval-in-4 (cond->if exp) evn))
+        ((cond? exp) (eval-in-4 (cond->if exp) env))
         ((application? exp)
          (apply-in-4 (actual-value (operator exp) env)
                      (operands exp)
