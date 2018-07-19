@@ -6,6 +6,7 @@
 ;; test2
 (load "../exercise-4.22/22.scm")
 
+;; 显示运行所用时间
 (define (driver-loop)
   (prompt-for-input input-prompt)
   (let ((input (read))
