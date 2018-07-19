@@ -2,9 +2,9 @@
 
 (load "31.scm")
 
-#|
-;; <test1: lazy声明，如练习4.27>
 
+;; <test1: lazy声明，如练习4.27>
+#|
 (driver-loop)
 
 ;;; L-Eval input:
@@ -14,7 +14,7 @@
 ok
 
 ;;; L-Eval input:
-(define (id (x lazy)) 
+(define (id (x lazy))   ; 带lazy声明
   (set! count (+ count 1))
   x)
 
@@ -44,10 +44,49 @@ count
 
 ;;; L-Eval value:
 2
+**************************************
+;;; L-Eval input:
+(define count 0)
+
+;;; L-Eval value:
+ok
+
+;;; L-Eval input:
+(define (id x)         ; 不带lazy声明
+  (set! count (+ count 1))
+  x)
+
+;;; L-Eval value:
+ok
+
+;;; L-Eval input:
+(define w (id (id 10)))
+
+;;; L-Eval value:
+ok
+
+;;; L-Eval input:
+count
+
+;;; L-Eval value:
+2
+
+;;; L-Eval input:
+w
+
+;;; L-Eval value:
+10
+
+;;; L-Eval input:
+count
+
+;;; L-Eval value:
+2
+**************************************
 |#
 
 
-;; test2: memo声明
+;; <test2: memo声明>
 
 ;; 显示运行所用时间
 (define (driver-loop)
@@ -65,8 +104,6 @@ count
 
 (driver-loop)
 #|
-;; <test2: memo声明>
-
 ;;; L-Eval input:
 (define (fib (n lazy-memo))  ; 带memo声明的
   (if (< n 2)
@@ -83,7 +120,7 @@ ok
 ;;; L-Eval value:
 runtime: 3.6100000000000003
 6765
-
+**************************************
 ;;; L-Eval input:
 (define (fib (n lazy))   ; 不带memo声明的
   (if (< n 2)
