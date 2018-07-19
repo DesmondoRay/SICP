@@ -37,8 +37,9 @@ ok
 ok
 
 ;;; M-Eval input: 
-(let ((c (+ a 1)) (d (+ b 1)))
-(+ c d))
+(let ((c (+ a 1)) 
+      (d (+ b 1)))
+  (+ c d))
 
 ;;; M-Eval value: 
 7
