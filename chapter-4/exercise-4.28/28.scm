@@ -9,7 +9,7 @@
 (load "../common/representing-thunks.scm")
 
 
-#|
+
 ;; test1: 使用 actual-value
 (driver-loop)
 
