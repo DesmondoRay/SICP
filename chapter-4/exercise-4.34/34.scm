@@ -108,20 +108,32 @@
 
 
 ;; test
-#|
 (driver-loop)
 
+#|
 ;;; L-Eval input:
-(define a '(a b c))
+(define a '(1 2 3))
 
 ;;; L-Eval value:
 ok
 
 ;;; L-Eval input:
 (print a)
-a b c 
+1 2 3 
 ;;; L-Eval value:
 done
+
+;;; L-Eval input:
+(car a)
+
+;;; L-Eval value:
+1
+
+;;; L-Eval input:
+(car (cdr a))
+
+;;; L-Eval value:
+2
 
 ;;; L-Eval input:
 (define b (cons 1 2))
