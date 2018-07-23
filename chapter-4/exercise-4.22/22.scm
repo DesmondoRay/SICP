@@ -1,6 +1,6 @@
 ;;; exercise 4.22
 
-(load "../common/analyze-execute.scm")
+; (load "../common/analyze-execute.scm")
 
 (define (let? exp) (tagged-list? exp 'let))
 

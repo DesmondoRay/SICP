@@ -2,9 +2,9 @@
 ;; 由于需要给表和序对加上标签，并且惰性list的相关定义是直接添加到全局环境内的，
 ;; 所以，将打印等操作直接定义于全局环境会更简单；
 ;; 由此需要定义三种构造和选择函数：
-;   1、cons-scheme为系统基本过程（类似于265页 脚注221）
-;   2、cons用于构造带标签的惰性list
-;   3、cons-inner用于构造惰性list
+;   1、cons-scheme为系统基本过程，以及car-scheme和cdr-scheme（类似于265页 脚注221）
+;   2、cons用于构造带标签的惰性list，以及car，cdr
+;   3、cons-inner用于构造惰性list，及car-inner和cdr-inner
 
 (load "../common/evaluator-data-structures.scm")
 (load "../common/running-evaluator.scm")
