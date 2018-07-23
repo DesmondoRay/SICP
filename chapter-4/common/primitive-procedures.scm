@@ -119,6 +119,7 @@
         (list 'remainder remainder)
         (list 'reverse reverse)
         (list 'round round)
+		(list 'runtime runtime)
         (list 'sin sin)
         (list 'sqrt sqrt)
         (list 'string string)
