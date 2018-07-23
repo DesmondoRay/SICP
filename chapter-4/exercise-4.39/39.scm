@@ -1,11 +1,11 @@
 ;;; exercise 4.39
 
 (define (multiple-dwelling)
-  (let ((baker (amb 1 2 3 4 5)) 
-        (cooper (amb 1 2 3 4 5))
+  (let ((baker    (amb 1 2 3 4 5)) 
+        (cooper   (amb 1 2 3 4 5))
         (fletcher (amb 1 2 3 4 5))
-        (miller (amb 1 2 3 4 5))
-        (smith (amb 1 2 3 4 5)))
+        (miller   (amb 1 2 3 4 5))
+        (smith    (amb 1 2 3 4 5)))
     (require (> miller cooper))
     (require (not (= cooper 1)))
     (require (not (= (abs (- fletcher cooper)) 1)))
@@ -15,11 +15,11 @@
     (require (not (= baker 5)))
     (require
      (distinct? (list baker cooper fletcher miller smith)))
-    (list (list 'baker baker)
-          (list 'cooper cooper)
+    (list (list 'baker    baker)
+          (list 'cooper   cooper)
           (list 'fletcher fletcher)
-          (list 'miller miller)
-          (list 'smith smith))))
+          (list 'miller   miller)
+          (list 'smith    smith))))
 
 #|
 说明：
@@ -30,9 +30,10 @@
 5、(require (not (= xxx n)))类似的过程，排除20%的错误结果(fletcher除外，因为有两个)。
 6、nonsence: 
 (require (not (= (abs (- xxx xxx)) 1)))过程包含not，=，abs，- 以及require内部的not，共5个基本操作；
-(require (not (= xxx 5)))过程包含not，=，以及require内部的not，共3个基本操作；
+(require (not (= xxx n)))过程包含not，=，以及require内部的not，共3个基本操作；
 (require (not (= (abs (- xxx xxx)) 1)))排除60%，“消耗”： 40% * 5；
-(require (not (= xxx 5)))排除20%： 80% * 3；
+(require (not (= xxx n)))排除20%： 80% * 3；
+所以，(require (not (= (abs (- xxx xxx)) 1)))放在(require (not (= xxx n)))前面。
 |#
 
 ;; test
