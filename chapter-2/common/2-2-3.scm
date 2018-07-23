@@ -24,3 +24,6 @@
          (list tree))
         (else (append (enumerate-tree (car tree))
                       (enumerate-tree (cdr tree))))))
+
+(define (flatmap proc seq)
+  (accumulate append '() (map proc seq)))
