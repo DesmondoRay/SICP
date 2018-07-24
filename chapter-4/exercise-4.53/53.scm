@@ -8,7 +8,7 @@
         ((quoted? exp) (analyze-quoted exp))
         ((variable? exp) (analyze-variable exp))
         ((assignment? exp) (analyze-assignment exp))
-        ((permanent-set? exp) (analyze-permanent-set exp)) ;; exercise 4.52
+        ((permanent-set? exp) (analyze-permanent-set exp)) ;; exercise 4.51
         ((definition? exp) (analyze-definition exp))
         ((if? exp) (analyze-if exp))
         ((if-fail? exp) (analyze-if-fail exp))  ; exercise 4.52
@@ -59,7 +59,7 @@
 (if-fail (let ((p (prime-sum-pair '(1 3 5 8) '(20 35 110))))
            (permanent-set! pairs (cons p pairs))
            (amb))
-         pairs))
+         pairs)
 ;;; Starting a new problem 
 ;;; Amb-Eval value:
 ok
