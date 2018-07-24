@@ -3,25 +3,21 @@
 (load "../common/parsing-natural-language.scm")
 
 (ambeval 
- '(define (parse-word word-list)
-    (require (not (null? *unparsed*)))
-    (require (memq (car *unparsed*) (cdr word-list)))
-    (let ((found-word (random-choice word-list)))
-      (set! *unparsed* (cdr *unparsed*))
-      (list (car word-list) found-word)))
+ '(define (parse-word word-list) 
+    (require (not (null? *unparsed*))) 
+    (require (memq (car *unparsed*) (cdr word-list))) 
+    (let ((found-word (car *unparsed*))) 
+      (set! *unparsed* (cdr *unparsed*)) 
+      (list-amb (cdr word-list))))
  the-global-environment
  (lambda (value fail) value)
  (lambda () 'failed))
 
 (ambeval
- '(define (random-choice lst)
-    (define (iter index lst)
-      (if (= index 0)
-          (car lst)
-          (iter (- index 1) (cdr lst))))
-    (let ((len (- (length lst) 1)))
-      (let ((index (random len)))
-        (iter index (cdr lst)))))
+ '(define (list-amb li) 
+    (if (null? li) 
+        (amb) 
+        (amb (car li) (list-amb (cdr li)))))
  the-global-environment
  (lambda (value fail) value)
  (lambda () 'failed))
@@ -30,24 +26,66 @@
 (driver-loop)
 #|
 (sentence 
- (noun-phrase (simple-noun-phrase (article a) 
-                                  (noun professor)) 
-              (prep-phrase (prep to) 
-                           (simple-noun-phrase (article the) 
-                                               (noun student)))) 
- (verb-phrase (verb eats) 
-              (prep-phrase (prep by) 
-                           (simple-noun-phrase (article the) 
-                                               (noun student)))))
+;;; Amb-Eval input:
+(parse '(the student with the cat sleeps in the class))
 
+;;; Starting a new problem 
+;;; Amb-Eval value:
 (sentence 
- (noun-phrase (simple-noun-phrase (article a) 
-                                  (noun professor)) 
-              (prep-phrase (prep in) 
-                           (simple-noun-phrase (article a) 
-                                               (noun professor)))) 
- (verb-phrase (verb lectures) 
-              (prep-phrase (prep for) 
-                           (simple-noun-phrase (article the) 
-                                               (noun class)))))
+(noun-phrase (simple-noun-phrase the student) (prep-phrase for (simple-noun-phrase the student))) (verb-phrase studies (prep-phrase for (simple-noun-phrase the student))))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(sentence (noun-phrase (simple-noun-phrase the student) (prep-phrase for (simple-noun-phrase the student))) (verb-phrase studies (prep-phrase for (simple-noun-phrase the professor))))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(sentence (noun-phrase (simple-noun-phrase the student) (prep-phrase for (simple-noun-phrase the student))) (verb-phrase studies (prep-phrase for (simple-noun-phrase the cat))))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(sentence (noun-phrase (simple-noun-phrase the student) (prep-phrase for (simple-noun-phrase the student))) (verb-phrase studies (prep-phrase for (simple-noun-phrase the class))))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(sentence (noun-phrase (simple-noun-phrase the student) (prep-phrase for (simple-noun-phrase the student))) (verb-phrase studies (prep-phrase for (simple-noun-phrase a student))))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(sentence (noun-phrase (simple-noun-phrase the student) (prep-phrase for (simple-noun-phrase the student))) (verb-phrase studies (prep-phrase for (simple-noun-phrase a professor))))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(sentence (noun-phrase (simple-noun-phrase the student) (prep-phrase for (simple-noun-phrase the student))) (verb-phrase studies (prep-phrase for (simple-noun-phrase a cat))))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(sentence (noun-phrase (simple-noun-phrase the student) (prep-phrase for (simple-noun-phrase the student))) (verb-phrase studies (prep-phrase for (simple-noun-phrase a class))))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(sentence (noun-phrase (simple-noun-phrase the student) (prep-phrase for (simple-noun-phrase the student))) (verb-phrase studies (prep-phrase to (simple-noun-phrase the student))))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(sentence (noun-phrase (simple-noun-phrase the student) (prep-phrase for (simple-noun-phrase the student))) (verb-phrase studies (prep-phrase to (simple-noun-phrase the professor))))
+
 |#
