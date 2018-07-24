@@ -124,6 +124,7 @@
 		(list 'runtime runtime)
         (list 'sin sin)
         (list 'sqrt sqrt)
+		(list 'square square)
         (list 'string string)
         (list 'string->list string->list)
         (list 'string->number string->number)
