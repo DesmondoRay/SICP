@@ -42,5 +42,5 @@ Assertion added to data base.
 ;;; Query input:
 (last-pair ?x (3))
 
-;;; Query results:  ; 无响应，因为有无数个解
+;;; Query results:  ; 无输出，因为有无数个解
 |#

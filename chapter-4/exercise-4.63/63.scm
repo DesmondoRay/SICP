@@ -9,7 +9,6 @@
                     (son ?person ?person-2))))
 |#
 
-
 ;; test
 (load "../common/query-system-driver-loop.scm")
 
@@ -30,7 +29,6 @@ Assertion added to data base.
 ;;; Query input:
 
 Assertion added to data base.
-
 ......
 
 ;;; Query input:
