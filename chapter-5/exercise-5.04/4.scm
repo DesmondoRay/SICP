@@ -1,6 +1,6 @@
 ;;; exercise 5.4
 
-;; a)
+;; a) recursion
 (controller
  (assign b (op read))
  (assign n (op read))
@@ -28,7 +28,7 @@
 (perform (op print) (reg val)))
 
 
-;; b)
+;; b) iteration
 (controller
  (assign b (op read))
  (assign n (op read))

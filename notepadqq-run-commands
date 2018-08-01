@@ -1,0 +1,10 @@
+;; 将该命令添加到notepadqq到Run Commands下，可以直接启动终端并在mit-scheme中加载该文件
+gnome-terminal --geometry=100x50 --working-directory=%directory% -x mit-scheme --load "%path%"
+
+;; --geometry=100x50 指定打开的终端大小
+;; --working-directory=%directory% 指定打开的终端位置
+;; -x mit-scheme --load "%path%" 使用mit-scheme加载当前文件
+
+;; 其他:
+; 查看信息： info gnome-terminal
+; 查看帮助: gnome-terminal -?
