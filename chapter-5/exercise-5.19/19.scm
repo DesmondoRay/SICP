@@ -36,7 +36,7 @@
               (begin (display (list 'label: (cadr bp) "," 'offset: (car bp)))
                      (newline))
               (begin 
-               (set! break true)
+               (set! break true) ; 练习5.19
               (let ((insts (get-contents pc)))
                 (if (null? insts)
                     'done
