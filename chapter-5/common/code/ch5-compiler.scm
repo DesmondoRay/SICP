@@ -12,7 +12,8 @@
 ;;;;Then you can compile Scheme programs as shown in section 5.5.5
 
 ;;**implementation-dependent loading of syntax procedures
-(load "ch5-syntax.scm")         ;section 4.1.2 syntax procedures
+;section 4.1.2 syntax procedures
+(load "/home/desmondo/Documents/git/SICP/chapter-5/common/code/ch5-syntax.scm")
 
 
 ;;;SECTION 5.5.1

@@ -8,13 +8,16 @@
 
 ;;;; **NB** The actual "load" calls are implementation dependent.
 
-(load "ch5-regsim")			;reg machine simulator
+;reg machine simulator
+(load "/home/desmondo/Documents/git/SICP/chapter-5/common/code/ch5-regsim")
 
 ;; **NB** next file contains another "load"
-(load "ch5-eceval-support")		;simulation of machine operations
+;simulation of machine operations
+(load "/home/desmondo/Documents/git/SICP/chapter-5/common/code/ch5-eceval-support")
 
 ;;**NB** eceval-compiler *must* be loaded after eceval-support,
 ;;  so that the version of user-print in eceval-compiler will override
 ;;  the version in eceval-support
-(load "ch5-eceval-compiler")		;eceval itself
-					;and interface to compiled code
+;eceval itself
+(load "/home/desmondo/Documents/git/SICP/chapter-5/common/code/ch5-eceval-compiler")
+                    ;and interface to compiled code
