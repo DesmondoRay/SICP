@@ -186,7 +186,7 @@ apply-dispatch
   (branch (label compound-apply))
   (goto (label unknown-procedure-type))
 
-primitive-apply
+primitive-apply  ;exercise 5.30-b                                 ******
   (assign val (op apply-primitive-procedure)
               (reg proc)
               (reg argl))
