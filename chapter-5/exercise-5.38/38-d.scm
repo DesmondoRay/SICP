@@ -5,7 +5,7 @@
 (define (compile+ exp target linkage)
   (let ((operands (operands exp)))
     (if (> (length operands) 2)
-        (compile (by-two-inputs '+ operands) target linkage)
+        (compile (to-two-args '+ operands) target linkage)
         (let ((args (spread-arguments operands)))
           (end-with-linkage linkage
             (append-instruction-sequences (car args)
@@ -17,7 +17,7 @@
 (define (compile* exp target linkage)
   (let ((operands (operands exp)))
     (if (> (length operands) 2)
-        (compile (by-two-inputs '* operands) target linkage)
+        (compile (to-two-args '* operands) target linkage)
         (let ((args (spread-arguments operands)))
           (end-with-linkage linkage
              (append-instruction-sequences (car args)
@@ -27,15 +27,15 @@
                    `((assign ,target (op *) (reg arg1) (reg arg2)))))))))))
 
 ;; 将多个参数的表达式转换乘两个参数的表达式
-(define (by-two-inputs proc args)
+(define (to-two-args proc args)
   (if (null? (cdr args))
       (car args)
       (list proc 
             (car args)
-            (by-two-inputs proc (cdr args)))))
+            (to-two-args proc (cdr args)))))
 
-;; test : by-two-inputs
-; input : (by-two-inputs '+ '(1 2 3 4))
+;; test : to-two-args
+; input : (to-two-args '+ '(1 2 3 4))
 ; output: (+ 1 (+ 2 (+ 3 4)))
 
 
