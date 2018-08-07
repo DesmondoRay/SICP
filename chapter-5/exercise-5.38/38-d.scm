@@ -26,6 +26,7 @@
                    '(arg1 arg2) (list target)
                    `((assign ,target (op *) (reg arg1) (reg arg2)))))))))))
 
+;; 将多个参数的表达式转换乘两个参数的表达式
 (define (by-two-inputs proc args)
   (if (null? (cdr args))
       (car args)
@@ -33,9 +34,9 @@
             (car args)
             (by-two-inputs proc (cdr args)))))
 
-;; test: by-two-inputs
-; 1 ]=> (by-two-inputs '+ '(1 2 3 4))
-; Value 13: (+ 1 (+ 2 (+ 3 4)))
+;; test : by-two-inputs
+; input : (by-two-inputs '+ '(1 2 3 4))
+; output: (+ 1 (+ 2 (+ 3 4)))
 
 
 ;; test: compile+
