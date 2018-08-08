@@ -1,4 +1,4 @@
-;;; exercise 5.45
+;;; exercise 5.45 a)
 
 (load "../common/code/ch5-compiler.scm")
 (load "../common/code/load-eceval-compiler.scm")
