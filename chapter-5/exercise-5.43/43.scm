@@ -2,7 +2,7 @@
 
 (load "../exercise-5.42/42.scm")
 (load "../exercise-5.43/4.16-scan-out-defines.scm")  ; 练习4.15
-(load "../exercise-5.43/4.6-let.scm")               ; 练习4.6
+(load "../exercise-5.43/4.6-let.scm")                ; 练习4.6
 
 (define (compile exp target linkage ct-env)
   (cond ((self-evaluating? exp)
