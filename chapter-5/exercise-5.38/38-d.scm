@@ -1,6 +1,6 @@
 ;;; exercise 5.38 d)
 
-(load "38-b.scm")
+(load "../exercise-5.38/38-b.scm")
 
 (define (compile+ exp target linkage)
   (let ((operands (operands exp)))
@@ -38,7 +38,7 @@
 ; input : (to-two-args '+ '(1 2 3 4))
 ; output: (+ 1 (+ 2 (+ 3 4)))
 
-
+#|
 ;; test: compile+
 (display
  (compile
@@ -47,7 +47,7 @@
   'val
   'next))
 (newline) (newline)
-#| output:
+output:
 ((env) (arg1 arg2 val) 
  ((assign arg1 (const 1)) 
   (save arg1) 
@@ -62,7 +62,6 @@
   (assign val (op +) (reg arg1) (reg arg2)) 
   (perform (op define-variable!) (const f) (reg val) (reg env)) 
   (assign val (const ok))))
-|#
 
 
 ;; test: compile*
@@ -71,7 +70,7 @@
   '(* a b c d)
   'val
   'next))
-#| output: 
+output: 
 ((env) (arg1 arg2 val) 
  ((assign arg1 (op lookup-variable-value) (const a) (reg env)) 
   (save arg1) 

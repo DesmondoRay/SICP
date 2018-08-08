@@ -1,7 +1,7 @@
 ;;; exercise 5.38 b)
 
 (load "../common/code/ch5-compiler.scm")
-(load "38-a.scm")
+(load "../exercise-5.38/38-a.scm")
 
 ;; 新增
 (define (open-coded? exp) (memq (operator exp) '(= + - *)))
