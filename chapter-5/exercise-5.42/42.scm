@@ -2,7 +2,7 @@
 
 (load "../exercise-5.40/40.scm")
 (load "../exercise-5.41/41.scm")
-;; 若要运行，则需要在eceval-operations中添加
+;; 若要进行求值，则需要在eceval-operations中添加
 ;; lexical-address-lookup和lexical-address-set!
 
 (define (compile-variable exp target linkage ct-env)
