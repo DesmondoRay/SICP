@@ -30,7 +30,7 @@
          (compile-definition exp target linkage))
         ((if? exp) (compile-if exp target linkage))
         ((lambda? exp) (compile-lambda exp target linkage))
-		((let? exp) (compile (let->combination exp) target linkage))
+		((let? exp) (compile (let->combination exp) target linkage)) ; ******
         ((begin? exp)
          (compile-sequence (begin-actions exp)
                            target

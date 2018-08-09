@@ -1,6 +1,6 @@
 ;;; exercise 5.50
 
-(define m-eval
+(define evaluator
   '(begin
 ;; 注：需要把primitive-procedures的定义放在前面！！！
 (define primitive-procedures
