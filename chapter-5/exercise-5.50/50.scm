@@ -9,7 +9,7 @@
 
 (load "4.1-eval.scm")         ; 4.1节的内容，有一定的增减，见当前文件所在目录下的4.1-eval.scm
 (load "exercise-4.6-let.scm") ; exercise 4.6
-(load "changed-compiler.scm") ; 修改ch5-compiler，在compile过程中添加对let语句的翻译
+(load "changed-compiler.scm") ; 修改ch5-compiler，在compile过程中添加对let语句的编译
 
 ;; 增加apply和map的定义，即将这两个定义与m-eval置于同一个环境内；
 ;; 也可将这两个定义添加到 4.1-eval.scm 的 evaluator 里
@@ -28,7 +28,7 @@
      ))
 
 (define m-eval (list 'begin apply-and-map evaluator))
-; 也可写成: (403页，脚注321)
+; 也可写成: (见403页，脚注321)
 ; (define M-eval `(begin ,apply-and-map ,evaluator))
 
 (compile-and-go m-eval)
