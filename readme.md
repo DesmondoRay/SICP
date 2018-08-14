@@ -2,8 +2,8 @@
  Structure and Interpretation of Computer Program (Second Edition)
 
 ### 编程环境
-- 操作系统：	Ubuntu 16.04  
-- 解释器：	mit-scheme，DrRacket（练习 3.47需要使用）  
+- 操作系统： Ubuntu 16.04  
+- 解释器：  mit-scheme，DrRacket（练习 3.47需要使用）  
 
 若是选择mit-scheme，建议与notepad搭配使用（或类似的文本编辑器），  
 设置notepad的 Run >> Modify Run Commands，在command栏里填写：  
