@@ -1,8 +1,8 @@
 ;;; exercise 1.45
 
 (load "exercise-43.scm")
-(load "fixed-point.scm")
-(load "average-damp.scm")
+(load "exercise-45-fixed-point.scm")
+(load "common/average-damp.scm")
 
 (define (nth-root n)
   (lambda (x) (fixed-point (repeat-average-damp(lambda (y)
@@ -26,10 +26,16 @@
         (else 1)))
 
 
-
+;; test
 (display ((nth-root 4) 16))
 (newline)
 (display ((nth-root 8) 256))
 (newline)
 (display ((nth-root 16) (* 256 256)))
 (newline)
+
+#| output:
+2.0000000000021965
+2.000000000003967
+2.000000000076957
+|#

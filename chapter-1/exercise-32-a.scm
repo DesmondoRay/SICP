@@ -9,5 +9,13 @@
 (define (term a) a)
 (define (inc a) (+ a 1))
 
-(accumulate + 0 term 1 inc 5)
-(accumulate * 1 term 1 inc 5)
+
+#| test:
+1 ]=> (accumulate + 0 term 1 inc 5)
+
+;Value: 15
+
+1 ]=> (accumulate * 1 term 1 inc 5)
+
+;Value: 120
+|#

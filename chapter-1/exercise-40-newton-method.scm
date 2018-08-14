@@ -1,3 +1,5 @@
+;;; exercise 1.40
+
 (define (deriv g)
   (lambda (x)
     (/ (- (g (+ x dx)) (g x))

@@ -3,6 +3,9 @@
 (define (compose f g)
   (lambda (x) (f (g x))))
 
-(define (square x) (* x x))
 
-((compose square 1+) 6)
+#| test:
+1 ]=> ((compose square 1+) 6)
+
+;Value: 49
+|#

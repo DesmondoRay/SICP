@@ -7,6 +7,9 @@
         (iter (- k 1) (/ (square x) (- (- (* k 2) 1) result)))))
   (iter k 0))
 
-(define (square x) (* x x))
 
-(exact->inexact(tan-cf 1 10))
+#| test:
+1 ]=> (tan-cf 1.0 10)
+
+;Value: 1.557407724654902
+|#

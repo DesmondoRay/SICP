@@ -13,6 +13,12 @@
 (define (smooth-times n f)
   ((repeated smooth n) f))
 
+;; test
 (display ((smooth square) 5))
 (newline)
 (display ((smooth-times 10 square) 5))
+
+#| output:
+25.000000000066663
+25.000000000666663
+|#

@@ -16,8 +16,6 @@
 (define (sqrt x)
   (sqrt-iter 1.0 x))
 
-(define (square a) (* a a))
-
 (sqrt 9)
 (sqrt (+ 100 37))
 (sqrt (+ (sqrt 2) (sqrt 3)))

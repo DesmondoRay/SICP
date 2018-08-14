@@ -1,6 +1,10 @@
 ;;; exercise 1.41
 
 (define (double g)
-  (lambda (x) (g(g x))))
+  (lambda (x) (g (g x))))
 
-(((double (double double)) 1+) 5)
+#| test:
+1 ]=> (((double (double double)) 1+) 5)
+
+;Value: 21
+|#

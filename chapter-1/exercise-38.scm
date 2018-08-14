@@ -14,6 +14,12 @@
       (* 2 (+ 1 (/ (- i 2) 3)))
       1))
 
-(cont-frac (lambda (i) 1.0)
-           f-Di
-           20)
+(define (e n)
+  (+ 2 (cont-frac (lambda (x) 1.0) f-Di n)))
+
+
+#| test:
+1 ]=> (e 20)
+
+;Value: 2.718281828459045
+|#

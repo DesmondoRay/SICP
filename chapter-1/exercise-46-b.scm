@@ -2,7 +2,6 @@
 
 (load "exercise-46-iterative-impove.scm")
 
-(define (square x) (* x x))
 (define (average x y)
   (/ (+ x y) 2))
 
@@ -22,4 +21,8 @@
   (fixed-point (lambda (y) (average y (/ x y)))
                1.0))
 
-(sqrt 2)
+#| test:
+1 ]=> (sqrt 2)
+
+;Value: 1.4142135623746899
+|#

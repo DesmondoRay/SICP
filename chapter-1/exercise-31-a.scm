@@ -16,8 +16,6 @@
 (define (factorial-double a b)
   (product term-double a inc b))
 
-(define (square a) (* a a))
-
 (define (numerator n)
   (if (even? n)
       (* (factorial-double 1 (/ n 2))
@@ -35,5 +33,13 @@
   (exact->inexact(/ (numerator n)
      (denominator n))))
 
-(* (compute 100) 4)
-(* (compute 1000) 4)
+
+#| test
+1 ]=> (* (compute 100) 4)
+
+;Value: 3.1570301764551676
+
+1 ]=> (* (compute 1000) 4)
+
+;Value: 3.1431607055322663
+|#

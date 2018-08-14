@@ -1,6 +1,6 @@
 ;;; exercise 1.33
 
-(load "prime?.scm")
+(load "common/prime?.scm")
 
 (define (accumulate combiner null-value filter term a next b)
   (cond ((> a b) null-value)
@@ -14,7 +14,7 @@
   (define (inc a) (+ 1 a))
   (accumulate + 0 prime? term a inc b))
 
-(define (sum-gcd n)
+(define (product-gcd n)
   (define (term a) a)
   (define (inc a) (+ 1 a))
   (define (gcd? a)
@@ -25,5 +25,13 @@
         (gcd n (remainder a n))))
   (accumulate * 1 gcd? term 1 inc n))
 
-(sum-primes 2 10)
-(sum-gcd 10)
+
+#| test:
+1 ]=> (sum-primes 2 10)
+
+;Value: 17
+
+1 ]=> (product-gcd 10)
+
+;Value: 189
+|#

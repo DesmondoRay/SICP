@@ -9,6 +9,11 @@
         (iter (- k 1) (/ (f1 k) (+ (f2 k) result)))))
   (iter k 0))
 
-(cont-frac (lambda (i) 1.0)
+
+#| test:
+1 ]=> (cont-frac (lambda (i) 1.0)
            (lambda (i) 1.0)
            12)
+
+;Value: .6180257510729613
+|#

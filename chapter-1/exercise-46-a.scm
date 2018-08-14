@@ -2,7 +2,6 @@
 
 (load "exercise-46-iterative-impove.scm")
 
-(define (square x) (* x x))
 (define (average x y)
   (/ (+ x y) 2))
 
@@ -16,4 +15,9 @@
 
   ((iterative-impove good-enough impove) guess))
 
-(sqrt-iter 1.0 2)
+
+#| test:
+1 ]=> (sqrt-iter 1.0 2)
+
+;Value: 1.4142156862745097
+|#
