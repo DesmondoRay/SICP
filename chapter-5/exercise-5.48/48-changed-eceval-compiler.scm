@@ -91,9 +91,9 @@
    (list 'compiled-procedure-entry compiled-procedure-entry)
    (list 'compiled-procedure-env compiled-procedure-env)
    
-   (list 'compile-and-run? compile-and-run?) 			; ******
-   (list 'compile-body compile-body)					; ******
-   (list 'compile-and-assemble compile-and-assemble)	; ******
+   (list 'compile-and-run? compile-and-run?)                ; ******
+   (list 'compile-body compile-body)                        ; ******
+   (list 'compile-and-assemble compile-and-assemble)        ; ******
    ))
 
 (define eceval

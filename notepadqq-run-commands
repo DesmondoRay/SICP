@@ -8,3 +8,5 @@ gnome-terminal --geometry=100x50 --working-directory=%directory% -x mit-scheme -
 ;; 其他:
 ; 查看信息： info gnome-terminal
 ; 查看帮助: gnome-terminal -?
+; 执行多条语句: gnome-terminal -x bash -c "command 1; command 2"
+; 如：gnome-terminal -x bash -c "gcc %path; ./a.out; read" 表示编译并运行a.out，并且不会立即关闭terminal
