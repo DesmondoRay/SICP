@@ -14,10 +14,28 @@
          (cdr (/ z 2)))
         (else (+ 1 (cdr (/ z 3))))))
 
-(car 6)
-(car 12)
-(car 24)
+#| test: 
+1 ]=> (car 6)
 
-(cdr 6)
-(cdr 18)
-(cdr 54)
+;Value: 1
+
+1 ]=> (car 12)
+
+;Value: 2
+
+1 ]=> (car 24)
+
+;Value: 3
+
+1 ]=> (cdr 6)
+
+;Value: 1
+
+1 ]=> (cdr 18)
+
+;Value: 2
+
+1 ]=> (cdr 54)
+
+;Value: 3
+|#

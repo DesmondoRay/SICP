@@ -22,6 +22,7 @@
                     (y-point(end-segment segment)))
                  2)))
 
+;; test:
 (define point-1 (make-point 10 10))
 (define point-2 (make-point 100 80))
 (define segment (make-segment point-1 point-2))
@@ -29,3 +30,9 @@
 (print-point point-1)
 (print-point point-2)
 (print-point (midpoint-segment segment))
+
+#| output:
+(10,10)
+(100,80)
+(55,45)
+|#

@@ -14,7 +14,15 @@
   (display "/")
   (display (denom x)))
 
+;; test
 (print-rat (make-rat 1 2))
 (print-rat (make-rat -1 2))
 (print-rat (make-rat 1 -2))
 (print-rat (make-rat -1 -2))
+
+#| output:
+1/2
+-1/2
+-1/2
+1/2
+|#
