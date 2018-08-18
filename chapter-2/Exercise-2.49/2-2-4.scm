@@ -1,6 +1,6 @@
 ;;; 2.2.4节 (第92页)
 
-(load "p46.scm")
+(load "../Exercise-2.46/p46.scm")
 
 (define (frame-coord-map frame)
   (lambda (v)

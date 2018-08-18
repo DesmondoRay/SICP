@@ -7,6 +7,9 @@
       (cons (list-ref items n)
             (reverse-n items (- n 1)))))
 
-(reverse (list 1 4 9 16 25))
+#| test:
+1 ]=> (reverse (list 1 4 9 16 25))
 
+;Value 13: (25 16 9 4 1)
+|#
     

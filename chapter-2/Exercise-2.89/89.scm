@@ -21,6 +21,7 @@
 ;;; 测试
 (define c-list (make-coefflist 1 2 0 3 -2 -5))
 (define p (make-poly-dense 'x c-list))
+
 (newline)
 (display p)
 (newline)
@@ -31,3 +32,11 @@
 (display (order-first-coeff (coeff-list p)))
 (newline)
 (display (rest-coeffs (coeff-list p)))
+
+#| output: 
+(x 1 2 0 3 -2 -5)
+(1 2 0 3 -2 -5)
+1
+5
+(2 0 3 -2 -5)
+|#

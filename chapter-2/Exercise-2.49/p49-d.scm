@@ -1,4 +1,4 @@
-(load "p48.scm")
+(load "../Exercise-2.48/p48.scm")
 (load "2-2-4.scm")
 
 (segments->painter (list

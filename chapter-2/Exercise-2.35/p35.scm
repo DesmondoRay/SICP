@@ -1,4 +1,4 @@
-(load "2-2-3.scm")
+(load "../common/2-2-3.scm")
 
 (define (count-leaves t)
   (accumulate +
@@ -9,4 +9,8 @@
                          1))
                    t)))
 
-(count-leaves (list 1 2 (list 3 4)))
+#| test:
+1 ]=> (count-leaves (list 1 2 (list 3 4)))
+
+;Value: 4
+|#

@@ -239,3 +239,6 @@
 (define (make-polynomial-sparse var terms)
   ((get 'make-sparse 'polynomial) var terms))
 
+;; exercise 2.97-a
+(define (reduce-poly p1 p2)
+  ((get 'reduce-poly '(polynomial polynomial)) p1 p2))

@@ -24,3 +24,13 @@
       (mul-interval x
                     (make-interval (/ 1.0 (upper-bound y))
                                    (/ 1.0 (lower-bound y))))))
+
+;; test
+(define a (make-interval 1 3))
+(define b (make-interval 0 1))
+
+#| output:
+1 ]=> (div-interval a b)
+
+;divide by 0
+|#

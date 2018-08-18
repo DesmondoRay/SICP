@@ -7,4 +7,8 @@
                     answer))))
   (iter items '()))
 
-(square-list (list 1 2 3 4))
+#| test: 
+1 ]=> (square-list (list 1 2 3 4))
+
+;Value 13: (1 4 9 16)
+|#

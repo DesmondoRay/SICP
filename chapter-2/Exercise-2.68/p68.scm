@@ -1,5 +1,5 @@
-(load "p67.scm")
-(load "p68-element-of-set?.scm")
+(load "../Exercise-2.67/p67.scm")
+(load "../Exercise-2.68/p68-element-of-set?.scm")
 
 (define (encode message tree)
   (if (null? message)

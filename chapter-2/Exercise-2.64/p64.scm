@@ -1,3 +1,5 @@
+(load "../common/set-tree.scm")
+
 (define (list->tree elements)
   (car (partial-tree elements (length elements))))
 
@@ -16,3 +18,9 @@
                     (remaining-elts (cdr right-result)))
                 (cons (make-tree this-entry left-tree right-tree)
                       remaining-elts))))))))
+
+#| test: 
+1 ]=> (list->tree '(1 2 3 4 5 6 7))
+
+;Value 13: (4 (2 (1 () ()) (3 () ())) (6 (5 () ()) (7 () ())))
+|#

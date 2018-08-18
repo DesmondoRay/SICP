@@ -27,3 +27,5 @@
 ;;; 测试
 (display (add 1 2))
 (newline)
+
+;; output: 3

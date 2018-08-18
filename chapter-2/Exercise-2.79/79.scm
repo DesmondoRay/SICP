@@ -39,3 +39,13 @@
 			   (make-rational 5 6)))
 (newline)
 (newline)
+
+#| output:
+#t
+#f
+#t
+#f
+#t
+#t
+#f
+|#

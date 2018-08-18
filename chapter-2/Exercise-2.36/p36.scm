@@ -1,4 +1,4 @@
-(load "2-2-3.scm")
+(load "../common/2-2-3.scm")
 
 (define (accumulate-n op init seqs)
   (if (null? (car seqs))
@@ -11,4 +11,8 @@
                 (list 7 8 9)
                 (list 10 11 12)))
 
-(accumulate-n + 0 s)
+#| output:
+1 ]=> (accumulate-n + 0 s)
+
+;Value 13: (22 26 30)
+|#

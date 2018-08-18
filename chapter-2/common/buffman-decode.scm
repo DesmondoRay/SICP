@@ -1,4 +1,3 @@
-(load "buffman-tree.scm")
 
 (define (decode bits tree)
   (define (decode-1 bits current-branch)

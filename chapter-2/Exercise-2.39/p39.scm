@@ -10,7 +10,13 @@
              '()
              sequence))
 
+;; test
 (newline)
 (display (reverse-right (list 1 2 3)))
 (newline)
 (display (reverse-left (list 1 2 3)))
+
+#| output:
+(3 2 1)
+(3 2 1)
+|#

@@ -4,4 +4,7 @@
 (define b (make-branch 4 5))
 (define m (make-mobile a b))
 
-(total-weight m)
+(newline)
+(display (total-weight m))
+
+;; output: 8

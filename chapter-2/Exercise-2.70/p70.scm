@@ -1,4 +1,5 @@
-(load "p69.scm")
+(load "../Exercise-2.68/p68.scm")
+(load "../Exercise-2.69/p69.scm")
 
 (define pairs (list (list 'A 2) 
                     (list 'NA 16) 
@@ -20,4 +21,7 @@
 
 (define code (encode msg tree))
 
-(length code)
+(newline)
+(display (length code))
+
+;; output: 84

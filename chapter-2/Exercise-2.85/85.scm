@@ -32,17 +32,17 @@
 
 ;;; 测试drop
 (newline)
-;(display (drop (make-complex-from-real-imag 3 0)))
+(display (drop (make-complex-from-real-imag 3 0)))
 (newline)
-;(display (drop (make-complex-from-real-imag 3 2)))
+(display (drop (make-complex-from-real-imag 3 2)))
 (newline)
-;(display (drop (make-real 3)))
+(display (drop (make-real 3)))
 (newline)
-;(display (drop (make-real 3.5)))
+(display (drop (make-real 3.5)))
 (newline)
-;(display (drop (make-rational 3 1)))
+(display (drop (make-rational 3 1)))
 (newline)
-;(display (drop (make-rational 3 2)))
+(display (drop (make-rational 3 2)))
 (newline)
 ;;; 测试apply-generic
 (display (add (make-complex-from-real-imag 3 2)
@@ -55,3 +55,14 @@
               (make-rational 1 2)))
 (newline)
 
+#| output:
+3
+(complex rectangular 3 . 2)
+3
+(real . 3.5)
+3
+(rational 3 . 2)
+6
+7.
+2
+|#

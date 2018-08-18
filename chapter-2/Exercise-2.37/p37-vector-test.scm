@@ -6,4 +6,7 @@
 
 (define v (list 1 2 3 4))
 
-(matrix-*-vertor m v)
+(newline)
+(display (matrix-*-vertor m v))
+
+;; output: (30 56 80)

@@ -10,6 +10,14 @@
 (install-polar-package)
 (install-complex-package)
 
-(magnitude (make-complex-from-real-imag 3 4))
-(add (make-complex-from-real-imag 3 4)
-     (make-complex-from-real-imag 3 4))
+(load "../common/print.scm")
+(print
+ (magnitude (make-complex-from-real-imag 3 4))
+
+ (add (make-complex-from-real-imag 3 4)
+	  (make-complex-from-real-imag 3 4)))
+
+#| output:
+5
+(complex rectangular 6 . 8)
+|#

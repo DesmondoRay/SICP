@@ -49,3 +49,13 @@
 ;;; 实数+复数
 (display (add (make-real 2.3) (make-complex-from-real-imag 3 2)))
 (newline)
+
+
+#| output:
+(rational 8 . 3)
+(real . 5.5)
+(complex rectangular 5 . 2)
+(real . 4.7)
+(complex rectangular 9/2 . 2)
+(complex rectangular 5.3 . 2)
+|#

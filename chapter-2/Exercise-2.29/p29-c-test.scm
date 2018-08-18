@@ -8,4 +8,7 @@
 (define r (make-branch 5 3))
 (define m (make-mobile l r))
 
-(balance? m)
+(newline)
+(display (balance? m))
+
+;; output: #t

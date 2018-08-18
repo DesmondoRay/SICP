@@ -1,4 +1,4 @@
-(load "p12.scm")
+(load "../Exercise-2.12/p12.scm")
 
 (define (par1 r1 r2)
   (div-interval (mul-interval r1 r2)

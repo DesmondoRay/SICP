@@ -9,4 +9,8 @@
 
 (define message '(A D A B B C A))
 
-(encode message tree)
+#| output: 
+1 ]=> (encode message tree)
+
+;Value 13: (0 1 1 0 0 1 0 1 0 1 1 1 0)
+|#

@@ -38,3 +38,9 @@
 (newline)
 (display (real-part (make-complex-from-mag-ang 4 (make-rational 3 2))))
 (newline)
+
+#| output:
+(complex rectangular (rational 7 . 2) rational 19 . 4)
+4.272001872658765
+.2829488066708116
+|#

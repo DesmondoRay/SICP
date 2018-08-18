@@ -1,7 +1,5 @@
 ;;; 2.3.2节 (第100页)
 
-(load "p56.scm")
-
 (define (deriv exp var)
   (cond ((number? exp) 0)
         ((variable? exp)

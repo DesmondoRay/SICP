@@ -44,3 +44,12 @@
 (display (=zero? (make-rational 3 4)))
 (newline)
 (newline)
+
+#| output: 
+#t
+#f
+#t
+#f
+#t
+#f
+|#

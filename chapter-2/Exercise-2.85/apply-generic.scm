@@ -4,7 +4,9 @@
   (let ((type-tags (map type-tag args)))
     (let ((proc (get op type-tags)))
       (if proc
-          (drop (apply proc (map contents args)))  ;; 修改
+		  (if (eq? op 'project)
+			  (apply proc (map contents args))
+			  (drop (apply proc (map contents args))))  ;; 修改
           (if (= (length args) 2)
               (let ((type1 (car type-tags))
                     (type2 (cadr type-tags))

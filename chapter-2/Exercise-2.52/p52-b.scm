@@ -1,4 +1,4 @@
-(load "p50.scm")
+(load "../Exercise-2.50/p50.scm")
 
 (define (corner-split painter n)
     (if (= n 0)

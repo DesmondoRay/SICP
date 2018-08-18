@@ -7,4 +7,8 @@
                        (cons (car s) x))
                      rest)))))
 
-(subsets (list 1 2 3))
+#| test:
+1 ]=> (subsets (list 1 2 3))
+
+;Value 13: (() (3) (2) (2 3) (1) (1 3) (1 2) (1 2 3))
+|#

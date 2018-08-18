@@ -44,3 +44,10 @@
 (newline)
 (display (=zero? (make-polynomial 'x '())))
 (newline)
+
+#| output:
+(polynomial x (3 5) (2 6))
+(polynomial x (6 6) (5 14) (4 8))
+#t
+#t
+|#

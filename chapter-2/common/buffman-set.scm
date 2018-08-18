@@ -1,4 +1,3 @@
-(load "buffman-decode.scm")
 
 (define (adjoin-set x set)
   (cond ((null? set) (list x))

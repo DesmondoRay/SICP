@@ -6,5 +6,8 @@
          (union-set (cdr set1) set2))
         (else (cons (car set1)
                     (union-set (cdr set1) set2)))))
+#| test:
+1 ]=> (union-set (list 1 2 3) (list 2 3 4))
 
-(union-set (list 1 2 3) (list 2 3 4))
+;Value 13: (1 2 3 4)
+|#

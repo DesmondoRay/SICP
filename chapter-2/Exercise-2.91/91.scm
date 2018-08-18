@@ -51,3 +51,4 @@
 (display (div poly-1 poly-2))
 (newline)
 
+;; output: ((polynomial sparse x (3 1) (1 1)) (polynomial sparse x (1 1) (0 -1)))

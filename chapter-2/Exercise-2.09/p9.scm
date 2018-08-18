@@ -1,4 +1,4 @@
-(load "p8.scm")
+(load "../Exercise-2.08/p8.scm")
 
 (define (width x)
   (/ (- (upper-bound x) (lower-bound x))
@@ -15,6 +15,7 @@
 
 (define div (div-interval interval-1 interval-2))
 
+;; test
 (newline)
 (display (width add))
 (newline)
@@ -24,3 +25,9 @@
 (newline)
 (display (width div))
 
+#| output:
+1
+1
+5/2
+.20833333333333331
+|#

@@ -13,5 +13,12 @@
         (reverse-n-deep item (- (length item) 1))
         item)))
 
-(reverse (list (list 1 2) (list 3 4)))
-(reverse-deep (list (list 1 2) (list 3 4)))
+#|
+1 ]=> (reverse (list (list 1 2) (list 3 4)))
+
+;Value 13: ((3 4) (1 2))
+
+1 ]=> (reverse-deep (list (list 1 2) (list 3 4)))
+
+;Value 14: ((4 3) (2 1))
+|#

@@ -1,4 +1,4 @@
-(load "p40.scm")
+(load "../Exercise-2.40/p40.scm")
 
 (define (triad-sum-s n s)
   (filter (lambda (x)
@@ -15,4 +15,8 @@
 (define (sum-triad triad)
   (fold-right + 0 triad))
 
-(triad-sum-s 6 10)
+#| test: 
+1 ]=> (triad-sum-s 6 10)
+
+;Value 13: ((5 3 2) (5 4 1) (6 3 1))
+|#

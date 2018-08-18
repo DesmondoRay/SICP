@@ -5,5 +5,12 @@
          false)
         (else (equal? (cdr a) (cdr b)))))
 
-(equal? '(this is a list ) '(this is a list))
-(equal? '(this (is a) list ) '(this is a list))
+#| test:
+1 ]=> (equal? '(this is a list ) '(this is a list))
+
+;Value: #t
+
+1 ]=> (equal? '(this (is a) list ) '(this is a list))
+
+;Value: #f
+|#

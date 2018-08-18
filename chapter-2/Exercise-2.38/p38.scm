@@ -6,6 +6,7 @@
               (cdr rest))))
   (iter initial sequence))
 
+;; test
 (newline)
 (display (fold-right / 1 (list 1 2 3)))
 (newline)
@@ -15,3 +16,10 @@
 (newline)
 (display (fold-left list '() (list 1 2 3)))
 (newline)
+
+#| output:
+3/2
+1/6
+(1 (2 (3 ())))
+(((() 1) 2) 3)
+|#

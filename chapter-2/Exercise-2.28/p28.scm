@@ -8,5 +8,12 @@
           
 (define x (list (list 1 2) (list 3 4)))
 
-(fringe x)
-(fringe (list x x))
+#| test: 
+1 ]=> (fringe x)
+
+;Value 13: (1 2 3 4)
+
+1 ]=> (fringe (list x x))
+
+;Value 14: (1 2 3 4 1 2 3 4)
+|#

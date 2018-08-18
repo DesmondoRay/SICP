@@ -30,3 +30,5 @@
 (newline)
 (display (raise 2))
 (newline)
+
+;; output: (rational 2 . 1)

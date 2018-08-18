@@ -1,4 +1,4 @@
-(load "p56.scm")
+(load "../Exercise-2.56/p56.scm")
 
 (define (deriv exp var)
   (cond ((number? exp) 0)
@@ -66,4 +66,8 @@
         (car mul)
         mul)))
 
-(deriv '(x + 3 * (x + y + 2)) 'x)
+#| test:
+1 ]=> (deriv '(x + 3 * (x + y + 2)) 'x)
+
+;Value: 4
+|#

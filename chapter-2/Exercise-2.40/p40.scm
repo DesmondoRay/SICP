@@ -1,5 +1,5 @@
-(load "2-2-3.scm")
-(load "prime?.scm")
+(load "../common/2-2-3.scm")
+(load "../common/prime?.scm")
 
 (define (prime-sum-pairs n)
   (map make-pair-sum
@@ -21,3 +21,8 @@
                   (enumerate-interval 1 (- i 1))))
            (enumerate-interval 1 n)))
 
+#| test:
+1 ]=> (prime-sum-pairs 6)
+
+;Value 13: ((2 1 3) (3 2 5) (4 1 5) (4 3 7) (5 2 7) (6 1 7) (6 5 11))
+|#
